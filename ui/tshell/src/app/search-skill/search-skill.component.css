@@ -1,0 +1,32 @@
+.badge-secondary{
+    background-color: rgb(4, 107, 27);
+    width:100px;
+    height:30px;
+    font-size: 20px;
+    }
+    #skillName{
+        /* width: 120px;
+        height:20px; */
+        font-size: 20px;
+       /*  padding: 20px;
+        margin: 20px; */
+        color:Blue;
+       /*  background-color: dimgrey; */
+    }
+    .activeColor{
+        background-color: rgb(19, 71, 23);  
+    }
+    
+    .deactiveColor{
+        background-color: dimgrey;
+    }
+    .btn-primary{
+       
+        font-size: 20px; 
+    }
+    .space{
+        margin-top:20px;
+    }
+    .spaceLeft{
+        margin-left:10px;
+    }

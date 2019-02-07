@@ -1,0 +1,37 @@
+
+<br>
+<div class="row spaceLeft">
+  <div class="col-lg-12">
+<h1>Skill</h1>
+  </div>
+</div>
+<div class="row spaceLeft">
+    <div class="col-lg-12">
+       <div> 
+            <input type="text" #name>
+            <input type="hidden" value="{{list.id}}" #id >
+                <button (click)="getSkill(name.value)" >Search Skill</button>
+        </div>
+    </div>
+</div>
+<div class="row space spaceLeft" >
+   <div class="col-lg-12">
+       <div>
+           <h4 id="skillName">Skill Name : {{list.name}} &nbsp;&nbsp; &nbsp;&nbsp;
+                <span *ngIf="list.active=='True'" class="badge badge-secondary activeColor">Active</span> 
+                <span *ngIf="list.active=='False'" class="badge badge-secondary deactiveColor">Deactive</span> 
+            </h4> 
+        </div>
+    </div>
+</div>
+<div class="row space spaceLeft" >
+    <div class="col-lg-12">
+        <span *ngIf="list.active=='True'">
+            <input type="button" value="Deactivate" class="btn btn-primary " (click)="toggllingSkill(id.value,name.value)"/>
+        </span>
+        <span *ngIf="list.active=='False'">
+            <input type="button" value="Activate" class="btn btn-primary" (click)="toggllingSkill(id.value,name.value)"/>
+        </span>
+    </div>
+</div>
+<br>

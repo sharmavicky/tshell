@@ -1,0 +1,216 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <!--  <div class="col-lg-7 col-12">
+      <br>
+      <br>
+      <h1 class="log">Test your skills with tShell...</h1>
+    </div> -->
+    <div class="col-lg-7 text-center text-lg-left">
+      <h1 class="log">Test your skills with tShell...</h1>
+    </div>
+    <div class="col-lg-4 col-12">
+
+      <div id="signupbox">
+        <div class="card card-inverse card-info mb-3 md-3">
+          <div class="card-header">
+
+            <div class="card-title" id="card4">Signup</div>
+
+          </div>
+          <div class="card-block">
+            <div *ngIf="status.emailExist == true && status.userIdExist == true && status.signupStatus==false && status.otpVerifyStatus==false && currentMode.emailVerifyMode"
+              class="alert alert-success message">
+              <div data-dismiss="alert">User already exists</div>
+            </div>
+            <div *ngIf="verifiedMode.failure==true" class="alert alert-danger message">
+              <div data-dismiss="alert">Your OTP does not match. Try again .... </div>
+            </div>
+
+            <div *ngIf="status.emailExist == true && status.userIdExist == false && currentMode.signupMode==true " class="alert alert-danger message">
+              <div data-dismiss="alert">Email already exists </div>
+            </div>
+            <div *ngIf="status.userIdExist == true && currentMode.signupMode==true" class="alert alert-danger message">
+              <div data-dismiss="alert">Employee ID already exists </div>
+            </div>
+
+            <div *ngIf="verifiedMode.time==true" class="form-group">
+              <div class="col-lg-12 otp">
+                <div class="otp alert alert-danger message">
+                  <div data-dismiss="alert"> Your OTP has expired. Want to regenerate the OTP ?</div>
+                  <button id="btn-login" class="btn  regeneratebutton" value="submit" (click)="regenerateOtp()">
+                    <span>Regenerate OTP</span>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+
+            <div id="login-alert" class="alert alert-danger error"></div>
+            <div *ngIf="error" class="message mb-0">
+              <app-error></app-error>
+            </div>
+
+
+            <div *ngIf="currentMode.signupMode" class="form-group">
+              <!-- <div *ngIf="show==false" class="form-group"> -->
+              <form [formGroup]="form">
+                <br>
+                <div class="form-group">
+                  <div class="col-lg-12">
+                    <input type="text" class="form-control" formControlName="employeeId" placeholder="Employee ID *" #empId />
+
+                    <div *ngIf="form.get('employeeId').touched && form.get('employeeId').invalid">
+                      <div *ngIf="form.get('employeeId').errors.required" class="danger validation">Employee ID is required</div>
+                      <!-- <div *ngIf="form.get('employeeId').errors.pattern" class="danger validation">Please enter digits only</div> -->
+                      <div *ngIf="form.get('employeeId').errors.minlength" class="danger validation">Employee ID must contain minimum 5 characters</div>
+                      <div *ngIf="form.get('employeeId').errors.maxlength" class="danger validation">Employee ID must contain maximum 10 characters</div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+
+
+                <div class="form-group">
+                  <div class="col-lg-12">
+
+                    <input type="text" class="form-control" formControlName="name" placeholder="Name *" #name/>
+                    <div *ngIf="form.get('name').touched && form.get('name').invalid">
+                      <div *ngIf="form.get('name').errors.required" class="danger validation">Name is required</div>
+                      <div *ngIf="form.get('name').errors.maxlength" class="danger validation">Name must contain maximum 45 characters</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-lg-12">
+
+                    <input type="text" class="form-control" formControlName="email" placeholder="Email *" #email/>
+
+                    <div *ngIf="form.get('email').touched && form.get('email').invalid">
+                      <div *ngIf="form.get('email').errors.required" class="danger validation">Email is required</div>
+                      <div *ngIf="form.get('email').errors.pattern" class="danger validation">Email pattern is not valid. Example: "tShell@cognizant.com"</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-lg-12">
+
+                    <input type="password" class="form-control" formControlName="password" placeholder="Password *" #password/>
+
+                    <div *ngIf="form.get('password').touched && form.get('password').invalid">
+                      <div *ngIf="form.get('password').errors.required" class="danger validation">Password is required</div>
+                      <div *ngIf="form.get('password').errors.minlength" class="danger validation">Password must contain minimum 6 characters</div>
+                      <div *ngIf="form.get('password').errors.maxlength" class="danger validation">Password must contain maximum 30 characters</div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="form-group">
+                  <div class="col-lg-12">
+
+                    <input type="password" class="form-control" appConfirmEqualValidator="password" formControlName="confirmPassword" placeholder="Confirm Password *"
+                      #confirmPassword/>
+                    <div *ngIf="form.get('confirmPassword').touched && form.get('confirmPassword').invalid">
+                      <div *ngIf="form.get('confirmPassword').errors.required" class="danger validation">Password is required</div>
+
+                      <div *ngIf="form.get('confirmPassword').errors.cannotContainSpace" class="danger validation">Password should not have any space
+                      </div>
+                      <div class="help-block validation" *ngIf="form.get('confirmPassword').touched && form.get('confirmPassword').errors?.notEqual">
+                        New password and confirm password does not match
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div id="card6"></div>
+
+                  <div class="col-lg-12">
+                    <button id="btn-login" href="#" class="btn btn-ts-primary button1" [disabled]="!form.valid" (click)="signup()"
+                      value="submit">Signup</button>
+                    <!--  <button id="btn-login" href="#" class="btn btn-ts-primary" [disabled]="!form.valid"  (click)="signup()"  style="width:100%"
+                      value="submit">Signup</button> -->
+                    <div id="card3"> Have an account?
+                      <a class="login" [routerLink]="['/login']"> Login </a>
+                    </div>
+                  </div>
+
+                </div>
+              </form>
+            </div>
+
+
+            <div *ngIf="currentMode.emailVerifyMode" class="form-group">
+
+              <div class="col-lg-12 otp">
+                <div class="otp message">Details saved successfully!!</div>
+                <div class="otp">
+                  You are one step behind in completing the signup process. Click 'Proceed' to initiate the email verification process.
+                </div>
+                <div class="row">
+                  <div class="col-lg-3 col-md-3"></div>
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <button id="btn-login" class="btn btn-ts-primary col-sm-12 col-12" value="submit" (click)="verifyEmail()">Proceed</button>
+                  </div>
+                  <div class="col-lg-3 col-md-3"></div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div *ngIf=" currentMode.otpVerifyMode==true" class="form-group otp">
+              <form [formGroup]="otpform">
+
+                <div class="form-group">
+                  <div class="col-lg-12 otp">
+                    An OTP has been sent to your registered email. It will expire in 2 minutes.</div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-lg-12">
+                    <input type="text" class="form-control" formControlName="otp" placeholder="Enter the OTP here *" #otp/>
+                    <div *ngIf="otpform.get('otp').touched && otpform.get('otp').invalid">
+                      <div *ngIf="otpform.get('otp').errors.required" class="danger validation">OTP is required</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-lg-12">
+                    <button id="btn-login" class="btn btn-ts-primary button" (click)="otpVerify()" value="submit">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div *ngIf="verifiedMode.success==true" class="form-group">
+              <div class="col-lg-12 otp">
+                <div class="otp alert alert-success message">
+                  <div data-dismiss="alert"> You have signed up successfully. You can login </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-3 col-md-3"></div>
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-12 ">
+                    <button id="btn-login" [routerLink]="['/login']" class="btn btn-ts-primary col-sm-12 col-12" value="submit">
+                      Login
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-1 col-12"></div>
+
+  </div>
+</div>

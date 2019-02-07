@@ -1,0 +1,311 @@
+a{
+    text-decoration: none;
+}
+.entrytest{
+    font-weight:300;
+    font-size:16px;
+    background-color:blue;
+    color:white;
+    opacity:0.8;
+}
+.exittest{
+    font-weight:300;
+    font-size:16px;
+    background-color:green;
+    color:white;
+    opacity:0.8;
+}
+.viewskills{ 
+    margin:2px;
+    
+}
+.skilltaken{
+    font-weight:300;
+    font-size:16px;
+}
+.testdate{
+    font-size:13px;
+    color:grey;
+}
+.percent{
+    font-weight:600;
+    font-size:40px;
+    color:grey;
+}
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+ 
+}
+.show-result{
+    color:grey;
+    font-size:15px;
+    border:none;
+    background-color:#fff;
+}
+.show-result:hover{
+    border:none;
+    background-color:#fff;
+    box-shadow:none;
+}
+.show-result:focus{
+    border:none;
+    background-color:#fff;
+    box-shadow:none;
+}
+.show-result:active{
+    border:none;
+    box-shadow:none;
+    background-color:#fff;
+}
+
+.answercards{
+    width:100%;
+    height:100%;
+    border:3px solid white;
+    color:white;
+    font-size:25px;
+    border-radius:.5rem;
+    opacity:.7;
+}
+.answercardsright{
+    background-color:green;
+    width:100%;
+    height:100%;
+    border:3px solid white;
+    color:white;
+    font-size:25px;
+    font-weight:400;
+    border-radius:.5rem;
+    opacity:.7;
+}
+.answercardswrong{
+    background-color:red;
+    width:100%;
+    height:100%;
+    border:3px solid white;
+    color:white;
+    font-size:25px;
+    font-weight:400;
+    border-radius:.5rem;
+    opacity:.7;
+}
+
+.avatar-upload {
+    padding-left: 15px;
+    position: relative;
+    max-width: 205px;
+  }
+  .avatar-upload .avatar-edit {
+    position: absolute;
+    right: 5px;
+    z-index: 1;
+    top: 10px;
+  }
+  .avatar-upload .avatar-edit input {
+    display: none;
+  }
+  .avatar-upload .avatar-edit input + label {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 0;
+    border-radius: 100%;
+    background: #FFFFFF;
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    font-weight: normal;
+    transition: all 0.2s ease-in-out;
+  }
+  .avatar-upload .avatar-edit input + label:hover {
+    background: #f1f1f1;
+    border-color: #d6d6d6;
+  }
+  .avatar-upload .avatar-edit input + label:after {
+    content: "\f040";
+    font-family: 'FontAwesome';
+    color: #757575;
+    position: absolute;
+    top: 7px;
+    color:#5BC0DE;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+  }
+  .avatar-upload .avatar-preview {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    border-radius: 100%;
+    border: 6px solid   #C8CBD1;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  }
+  .avatar-upload .avatar-preview > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .modal-header{
+    background-color: rgb(219, 217, 219);
+    
+}
+
+.modal-content{
+    margin-top:95px;
+}
+
+.addskill{
+    color:lightsalmon;
+    font-size:20px;
+    margin:2px;
+}
+
+.litopic {
+
+    cursor: default;
+    position: relative;
+    display: inline-block;
+    margin: 4px 4px 0 0;
+    padding: 7px;
+    font-size: 14px;
+  }
+  
+  .review{
+    font-weight: 700;
+    color: #0897CA;
+  }
+
+  .marginzero {
+    margin-bottom: 2px;
+  }
+
+  #imagePreview{
+    border-radius:50%;
+    height:100%;
+    width:100%;
+    background-image: url(https://www.loopconnect.net/images/main/avatar.png);
+  }
+
+  .username{
+    margin-top:15px;
+    padding-right: 30px;
+  }
+  
+.cardalignment{
+    margin: 0px 0px 0px 16px ;
+}
+
+.imagepreview{
+    padding:5px;
+}
+
+.userdetails{
+    padding:10px;
+}
+
+.userdetail{
+    font-size:35px;
+    font-weight: bold;
+}
+
+.employeeid{
+    font-size:20px;
+}
+
+.useremail{
+    color:blue;
+}
+
+.editprofile{
+    font-size:16px;
+    color:grey;
+}
+
+.editicon{
+    zoom:0.5px;
+}
+
+.searchskill{
+    margin-top:3%;
+}
+
+.addskill{
+    margin-left:2%;
+    margin-right:2%;
+}
+
+.skillname{
+    display:inline-block;
+}
+
+.useremail{
+    zoom:0.5px;
+}
+
+.assessmentskill{
+    margin-top:15px;
+}
+
+.assessmentskills{
+    padding-bottom:15px;
+}
+
+.skilltitle{
+    height:100%;
+}
+
+.skillnames{
+    margin-top:20px;
+}
+
+.assessmententry{
+    font-weight:400;
+    font-size:16px;
+    background-color:blue;
+    color:white;
+    opacity:0.7;
+}
+
+.assessmentexit{
+    font-weight:400;
+    font-size:16px;
+    background-color:green;
+    color:white;
+    opacity:0.7;
+}
+
+.assessmentscore{
+    font-size:25px;
+}
+
+.correctanswer{
+    height:20px;
+    width:20px;
+    background-color:green;
+    color:green;
+    opacity:.7;
+}
+
+.wronganswer{
+    height:20px;
+    width:20px;
+    background-color:red;
+    color:red;
+    opacity:.7;
+}
+
+.nottaken{
+    font-weight: 650
+}
+
+.rolename{
+    font-size:15px; 
+}

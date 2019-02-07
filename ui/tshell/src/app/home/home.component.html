@@ -1,0 +1,84 @@
+<!-- Navigation -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+
+      <!-- Slide One - Set the background image for this slide in the line below -->
+
+      <div class="carousel-item active" style="background-image: url('./assets/images/skilltest.jpg')">
+        <div class="carousel-caption">
+          <div class="textcustomize">Test Yourself With tShell
+          </div>
+          <button class="btn takeTest offset" [routerLink]="['/skills']">
+            Take test .&nbsp;. &nbsp;<i class="fas fa-pencil-alt blink"></i> </button>
+        </div>
+      </div>
+
+      <!-- Slide Two - Set the background image for this slide in the line below -->
+      <div class="carousel-item " style="background-image: url('./assets/images/compete.jpg')">
+        <div class="carousel-caption">
+          <div class="textcustomize">Compete With Experts
+          </div>
+          <button class="btn btn-primary takeTest offset" [routerLink]="['/skills']">
+            Take test .&nbsp;. &nbsp;<i class="fas fa-pencil-alt blink"></i> </button>
+        </div>
+      </div>
+
+      <!-- Slide Three - Set the background image for this slide in the line below -->
+      <div class="carousel-item" style=" background-image: url('./assets/images/navigate.jpg')">
+        <div class="carousel-caption ">
+          <div class="textcustomize" >Easily Navigate And Find Related Skills
+          </div>
+          <!--  <span> -->
+          <button class="btn btn-primary takeTest offset" [routerLink]="['/skills']" >
+            Take test .&nbsp;. &nbsp;<i class="fas fa-pencil-alt blink"></i> </button>
+          <!--  </span> -->
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <div class="container cardContent" >
+    <div class="card-group">
+      <div class="carddetail card bg-white ts-card ml-5percent" >
+        <div class="card-body text-center">
+          <p class="card-text"><i class="fas fa-trophy iconColor"></i></p>
+          <hr>
+          <p class="card-text cardText " >Compete
+            with the top performers and mark your name on board.</p>
+          <hr>
+        </div>
+      </div>
+      <div class="card bg-white ts-card ml-5percent" >
+        <div class="card-body text-center">
+          <p class="card-text"><i class="fas fa-graduation-cap iconColor"></i></p>
+          <hr>
+          <!--  <p class="card-text">know your status at anytime with tShell.</p> -->
+
+          <p class="card-text cardText" >Upgrade
+            your skills by taking test on specific skill available on tShell platform.</p>
+          <hr>
+        </div>
+      </div>
+      <div class="card bg-white ts-card ml-5percent" >
+        <div class="card-body text-center">
+          <p class="card-text"><i class="fas fa-cogs iconColor"></i></p>
+          <hr>
+          <p class="card-text cardText"  >Checkout
+            the updated questions and skills for the users.</p>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>

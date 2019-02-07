@@ -1,0 +1,84 @@
+.dropdown-menu {
+    background-color: #242628 ;
+}
+.dropdown-item {
+    color: rgba(255,255,255,.5);
+}
+
+.dropdown-item:hover {
+    color: white;
+    /* text-decoration: white; */
+    background-color: inherit;
+}
+
+.navbarStyle{
+    background-color:#242628; 
+    padding: 0px 16px;
+    
+}
+
+.navbarLink{
+    margin-top: 11px
+}
+
+
+body, html {
+    line-height: 1 ; 
+}
+
+
+
+/*  changepassword css */
+
+h3{
+    text-align: center;
+}
+
+
+.success{  
+    padding-top: 5px;
+    color: green;
+    font-size:25px;
+} 
+
+.modal-body{
+    border-radius: 0.5rem;
+}
+
+.modal-title{
+    padding-left: 120px;
+}
+#exampleModal{
+    margin-top: 20vh;
+}
+
+.customeMessage{
+    color:red;
+}
+
+#change{
+    color:rgba(255,255,255,.5);
+    cursor: pointer
+}
+
+#change:hover {
+    color: white;
+    /* text-decoration: white; */
+    background-color: inherit;
+}
+
+#status{
+    margin-bottom : 10px;
+    font-size: 15px;
+}
+
+#backendErrorstatus{
+    color: red;
+}
+
+
+.nav1{
+    margin-top: 5px;
+    margin-bottom: -19px;
+}
+

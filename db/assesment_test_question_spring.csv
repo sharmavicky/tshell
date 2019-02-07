@@ -1,0 +1,213 @@
+#,#,#,#,#,#,#,#,#,#,#,#
+#,,,,,,,,,,,#
+#,,,,,,,,,,,#
+#,,Use the below values for Topics,,,,,,,,,#
+#,OOPS              Exceptions              Flow Control              Threads,,,,,,,,,,#
+#,,,,,,,,,,,#
+#,,,,,,,,,,,#
+#,,,,,,,,,,,#
+#,,,,,,,,,,,#
+#,,,,,,,,,,,#
+#,,,,,,,,,,,#
+#,#,#,#,#,#,#,#,#,#,#,#
+Topic,Question,Option 1,Option 1 is answer?,Option 2,Option 2 is answer?,Option 3,Option 3 is answer?,Option 4,Option 4 is answer?,Option 5,Option 5 is answer?
+Spring IoC Container,Beans can be created by which of the following properties?,Scope,n,Property,n,It’s own constructor,y,Class,n,,
+Spring IoC Container,Which attribute is used to specify class name of the bean?,name,n,id,n,class,y,constructor-arg,n,,
+Spring IoC Container,Which of the following method can be used to used to instantiate a method?,static factory method,n,default-init method,n,destroy method,y,lazy-init method,n,,
+Spring IoC Container,Which attribute is used to specify static factory-method?,static factory method,n,lazy-init method,n,factory-method,y,default-init method,n,,
+Spring IoC Container,"A) public abstract class Product {
+ public static final Product AAA = new Battery(""AAA"", 2.5);
+ public static final Product CDRW = new Disc(""CD-RW"", 1.5);
+ ...
+      }
+      <beans ...>
+ <bean id=""aaa"" class=""org.springframework.beans.factory.config.
+ FieldRetrievingFactoryBean"">
+ </bean>
+     </beans>
+ 
+   B) Product aaa = com.shop.Product.AAA;
+      Product cdrw = com.shop.Product.CDRW;",A and B provides different functionality,n,Runtime Error in A,n,A and B are equivalent,y,Exception in B,n,,
+Spring IoC Container,Exception thrown by factory method?, IllegalArgumentException,n,IndexOutofBoundException,n,BeanCreationException,y,ClassPathNotFoundException,n,,
+Spring IoC Container,"What will be the output:-
+
+Snippet of Code:
+
+public class CreatePro 
+{
+     String ProductId;
+     public CreatePro(String ProductId) 
+     this.ProductId = ProductId;
+}
+ 
+public static Product creation_Product(String productId) 
+{ 
+     System.out.println(""Bean Created"");
+     if (""aaa"".equals(productId)) 
+     {
+        return new Battery(""AAA"", 2.5);
+     } 
+     else if (""cdrw"".equals(productId)) 
+     {
+ return new Disc(""CD-RW"", 1.5);
+     }
+ 
+}",Bean Created,n,ClassPathException,n,BeanCreationException,y,None of the mentioned,n,,
+Spring IoC Container,A bean can have more than one name using multiple id attributes?,TRUE,y,FALSE,n,,,,,,
+Spring IoC Container,Beans can be created by which of the following properties?,Static factory-method,y,Instance Factory-Method,y,Static fxactory-method,y,None of the above,n,,
+Spring IoC Container,"What will be the output:-
+
+Snippet of Code:
+
+public class CreatePro 
+{
+     String ProductId;
+     public CreatePro(String ProductId) 
+     this.ProductId = ProductId;
+}
+ 
+public static Product creation_Product(String productId) 
+{ 
+     System.out.println(""Bean Created"");
+     if (""aaa"".equals(productId)) 
+     {
+        return new Battery(""AAA"", 2.5);
+     } 
+     else if (""cdrw"".equals(productId)) 
+     {
+ return new Disc(""CD-RW"", 1.5);
+     }
+ 
+}",BeanCreationException,n,IllegalArgumentException,n,New Product will be created,y,None of the mentioned,n,,
+Spring IoC Container,Instance Factory method main purpose is to encapsulate the object-creation process in a method of another object instance.,TRUE,y,FALSE,n,,,,,,
+Spring IoC Container,"For a property editor to be searched correctly, it must be located in the same package as the target class, and the name must be Editor’s name",FALSE,y,TRUE,n,,,,,,
+Spring IoC Container,Which method provided by ExecutorService is used to check whether job is finished or cancelled,Futusre.isDone(),y,Fsuture.isCancelled(),y,Fusture.isDone(),y,None of the mentioned,n,,
+Spring IoC Container,The Quartz integration and message driven POJO container doesn’t needs TaskExecutor Services,FALSE,y,TRUE,n,,,,,,
+Spring IoC Container,Which of the following class’s instance is used by TimerTaskExecutor for managing jobs, java.sql.Date,n, java.util.Date,n, java.util.Timer,y,java.util.HashMap,n,,
+Spring IoC Container,"What will be the output:-
+
+Snippet of Code:
+
+public class CreatePro 
+{
+     String ProductId;
+     public CreatePro(String ProductId) 
+     this.ProductId = ProductId;
+}
+ 
+public static Product creation_Product(String productId) 
+{ 
+     System.out.println(""Bean Created"");
+     if (""aaa"".equals(productId)) 
+     {
+        return new Battery(""AAA"", 2.5);
+     } 
+     else if (""cdrw"".equals(productId)) 
+     {
+ return new Disc(""CD-RW"", 1.5);
+     }
+ 
+}",A and B provides different functionality,n,Runtime Error in A,n,A and B are equivalent,y,Exception in B,n,,
+Spring IoC Container,"What will be the output:-
+
+Snippet of Code:
+
+public class CreatePro 
+{
+     String ProductId;
+     public CreatePro(String ProductId) 
+     this.ProductId = ProductId;
+}
+ 
+public static Product creation_Product(String productId) 
+{ 
+     System.out.println(""Bean Created"");
+     if (""aaa"".equals(productId)) 
+     {
+        return new Battery(""AAA"", 2.5);
+     } 
+     else if (""cdrw"".equals(productId)) 
+     {
+ return new Disc(""CD-RW"", 1.5);
+     }
+ 
+}",Bean Created,n,ClassPathException,n,BeanCreationException,y,None of the mentioned,n,,
+Spring IoC Container,Which of the following method can be used to used to instantiate a method?,static factory method,n,default-init method,n,destroy method,y,lazy-init method,n,,
+Spring IoC Container,"A) public abstract class Product {
+ public static final Product AAA = new Battery(""AAA"", 2.5);
+ public static final Product CDRW = new Disc(""CD-RW"", 1.5);
+ ...
+      }
+      <beans ...>
+ <bean id=""aaa"" class=""org.springframework.beans.factory.config.
+ FieldRetrievingFactoryBean"">
+ </bean>
+     </beans>
+ 
+   B) Product aaa = com.shop.Product.AAA;
+      Product cdrw = com.shop.Product.CDRW;",Yes,y,No,n,,,,,,
+Spring IoC Container,Purpose of Static Factory Method?,Initialize bean,n,All of the mentioned,n,Static method to create an object,y,None of the mentioned,n,,
+Spring @MVC,Design pattern implemented by Dispatcher Servlet.,jsp,n,titles,n,front controller,y,None of the above,n,,
+Spring @MVC,Method arguments that can be used in handler methods using the @RequestMapping annotation.,HttpServletRequest or HttpServleResponse,y, @RequestParam,y, @ModelAttribute,y,None of the above,n,,
+Spring @MVC,To access the binding and validation result for the command object.,Errors,n,BindingResult,n,All of the mentioned,y,None of the above,n,,
+Spring @MVC,Bean classes pre-registered in the web application context by default.,DefaultAnnotationHandlerMapping,n,AnnotationMethodHandlerAdapter,n,All of the mentioned,y,None of the mentioned,n,,
+Spring @MVC, Callback methods provided by HandlerInterceptor to implement,DefaultAnnotationHandlerMapping,n,AnnotationMethodHandlerAdapter,n,All of the mentioned,y,None of the mentioned,n,,
+Spring @MVC,"Each handler interceptor must implement the HandlerInterceptor interface, which contains three callback methods for you to implement: preHandle(), postHandle(), and afterCompletion().",TRUE,y,FALSE,n,,,,,,
+Spring @MVC,Annotation which allows a controller’s field to be assigned using Spring Expression Language(SpEL), @Default,n, @None,n, @Value,y, @After,n,,
+Spring @MVC,The ContentNegotiatingViewResolver resolver first determines the media type for a request based on which of the following criteria?,It checks a request path extension,y,If a request path has an extension but no match can be found in the default mediaTypes section of the ContentNegotiatingViewResolver bean,y,"If no extension is present in a request path, the HTTP Accept header of the request is used",y, All of the above,n,,
+Spring @MVC,"Is this bean configuration metadata correct?
+
+   <beans ...>
+ bean id=""com.shop.Product.AAA""
+ class=""org.springframework.beans.factory.config.
+ FieldRetrievingFactoryBean"" /
+ bean id=""com.shop.Product.CDRW""
+ class=""org.springframework.beans.factory.config.
+ FieldRetrievingFactoryBean"" /
+   </beans>",Yes,y,No,n,,,,,,
+Spring @MVC,"Each handler interceptor must implement the HandlerInterceptor interface, which contains three callback methods for you to implement: preHandle(), postHandle(), and afterCompletion().",TRUE,y,FALSE,n,,,,,,
+Spring @MVC,Spring provides to simplify your DAO implementation by managing entitymanagers and transactions for you:-, HibernateTemplate,y,JpaTemplate,y,SpringTemplate,y,None of the mentioned,n,,
+Spring @MVC,Method arguments that can be used in handler methods using the @RequestMapping annotation.,HttpServletRequest or HttpServleResponse,y, @RequestParam,y, @ModelAttribute,y,None of the above,n,,
+Spring @MVC,Annotation which allows a controller’s field to be assigned using Spring Expression Language(SpEL), @Default,n, @None,n, @Value,y, @After,n,,
+Spring @MVC,The ContentNegotiatingViewResolver resolver first determines the media type for a request based on which of the following criteria?,It checks a request path extension,y,If a request path has an extension but no match can be found in the default mediaTypes section of the ContentNegotiatingViewResolver bean,y,"If no extension is present in a request path, the HTTP Accept header of the request is used",y, All of the above,n,,
+Spring @MVC,Annotation which allows a controller’s field to be assigned using Spring Expression Language(SpEL), @Default,n, @None,n, @Value,y, @After,n,,
+Spring @MVC,The ContentNegotiatingViewResolver resolver first determines the media type for a request based on which of the following criteria?,It checks a request path extension,y,If a request path has an extension but no match can be found in the default mediaTypes section of the ContentNegotiatingViewResolver bean,y,"If no extension is present in a request path, the HTTP Accept header of the request is used",y, All of the above,n,,
+Spring @MVC,DAO methods must be made transactional.,yes,y,no,n,,,,,,
+Spring @MVC,The ContentNegotiatingViewResolver resolver first determines the media type for a request based on which of the following criteria?,It checks a request path extension,y,If a request path has an extension but no match can be found in the default mediaTypes section of the ContentNegotiatingViewResolver bean,y,"If no extension is present in a request path, the HTTP Accept header of the request is used",y, All of the above,n,,
+Spring @MVC,The ContentNegotiatingViewResolver resolver first determines the media type for a request based on which of the following criteria?,It checks a request path extension,y,If a request path has an extension but no match can be found in the default mediaTypes section of the ContentNegotiatingViewResolver bean,y,"If no extension is present in a request path, the HTTP Accept header of the request is used",y, All of the above,n,,
+Spring @MVC,Annotation which allows a controller’s field to be assigned using Spring Expression Language(SpEL), @Default,n, @None,n, @Value,y, @After,n,,
+Hibernate and JPA,JpaTemplate will translate the native JPA exceptions into exceptions in Spring DataAccessException hierarchy., True,y,FALSE   ,n,,,,,,
+Hibernate and JPA,Spring HibernateTemplate can simplify your DAO implementation by managing sessions and transactions for you., True,y,FALSE                  ,n,,,,,,
+Hibernate and JPA, DAO methods must be made transactional., True,y,FALSE ,n,,,,,,
+Hibernate and JPA,"Annotation to find a transaction and then fail, complaining that no Hibernate session been bound to the thread.", @Transaction,n, @Transactional,n,tx:annotation,y, None of the mentioned,n,,
+Hibernate and JPA,tx:annotation HibernateTemplate will translate the native Hibernate exceptions into exceptions in Spring DataAccessException hierarchy., True,y,FALSE ,n,,,,,,
+Hibernate and JPA,Annotation for Hibernate exceptions to be translated into Spring DataAccessException for consistent exception handling:-, @Translation,n, @Repo,n, @Repository,y,None of the mentioned,n,,
+Hibernate and JPA,Instance to translate the native Hibernate exceptions into data access exceptions in Spring DataAccessException hierarchy.,PersistenceExceptionPostProcessor,n,PersistenceExceptionTranslation,n,PersistenceException,y, PersistenceExceptionTranslationPostProcessor,n,,
+Hibernate and JPA,You can assign a component name in this annotation and have the session factory autowired by the Spring IoC container with @Autowired., True,y,FALSE ,n,,,,,,
+Hibernate and JPA,Spring provides to simplify your DAO implementation by managing entitymanagers and transactions for you:-, HibernateTemplate,y,JpaTemplate,y,SpringTemplate,y,None of the mentioned,n,,
+Hibernate and JPA,Sessionfactory can manage contextual sessions for you and allows you to retrieve them by the:-,getSession() method,y, getCurrent() method,y,getCurrentSession() method,y,none of the mentioned,n,,
+Hibernate and JPA,An alternative to Spring HibernateTemplate is:-,HibernateContext,n,Hibernate contextual sessions,n,All of the mentioned,y, None of the mentioned,n,,
+Hibernate and JPA, DAO methods must be made transactional., True,y,FALSE ,n,,,,,,
+Hibernate and JPA,You can assign a component name in this annotation and have the session factory autowired by the Spring IoC container with @Autowired., True,y,FALSE ,n,,,,,,
+Hibernate and JPA,"In the bean configuration file for Hibernate (i.e., beans-hibernate.xml), you have to declare a HibernateTransactionManager instance for this application and enable declarative transaction via:-",tx:annotation,n, tx:annotationdriven,n, tx:annotation-driven,y,none of the mentioned,n,,
+Hibernate and JPA,Spring provides to simplify your DAO implementation by managing entitymanagers and transactions for you:-,HibernateTemplate,n,JpaTemplate,n,SpringTemplate,y,PersistenceExceptionTranslationPostProcessor,n,,
+Hibernate and JPA,Sessionfactory can manage contextual sessions for you and allows you to retrieve them by the:,getSession() method,n,getCurrent() method,n,getCurrentSession() method,y,none of the mentioned,n,,
+Hibernate and JPA, An alternative to Spring HibernateTemplate is:-, HisbernsateContext,y,Hibersnate contextual sessions,y, HsibersnateContext,y, None of the mentioned,n,,
+Hibernate and JPA,DAO methods must be made transactional.,Yes,y,no,n,,,,,,
+Hibernate and JPA,Which of the following is true about SessionFactory object in hibernate?,SessionFactory object configures Hibernate for the application using the supplied configuration file.,n,SessionFactory object allows for a Session object to be instantiated.,n,All of the above.,y, None of the mentioned,n,,
+Hibernate and JPA,Which of the following elements is used to define specific mappings from a Java classes to the database tables?,property,y,prosperty,n,class,y,class-config,n,,
+Hibernate and JPA,Which of the following is true about <property> element?,The <property> element is used to map a Java class property to a column in the database table.,y,The name attribute of the element refers to the property in the class.,y,The column attribute of the element refers to the column in the database table.,y, None of the mentioned,y,,
+Transaction Management,Method that allows you to start a new transaction (or obtain the currently active transacti,getTransaction(),n, commit(),n,rollback(),y,all of the mentioned,n,,
+Transaction Management,Transactions can be described with key properties:-, Atomicity,n,Consistency,n, Isolation,y,All of the mentioned,n,,
+Transaction Management,"To access a database running on the Derby server, you have to add:-",Derby client library,n,Tomcat client library,n, All of the mentioned,y,None of the mentioned,n,,
+Transaction Management,"Spring’s transaction support offers a set of technology-independent facilities, including transaction managers.", org.springframework.transaction.PlatformTransactionManager,n,org.springframework.transaction.support.TransactionTemplate,n, all of the mentioned,y, none of the mentioned,n,,
+Transaction Management,Spring’s core transaction management abstraction is based on the interface:-, PlatformTransaction,n,PlatformTransactionManager,n,TransactionManager,y,PlatformManager,n,,
+Transaction Management, The PlatformTransactionManager interface provides methods for working with transactions:,getTransaction(TransactionDefinition definition),n, commit(TransactionStatus status),n, rollback(TransactionStatus status),y,all of the mentioned,n,,
+Transaction Management,Spring has several built-in implementations of PlatformTransactionManager interface for use with different transaction management APIs., True,y,FALSE   ,n,,,,,,
+Transaction Management,"You just have to encapsulate your code block in a callback class that implements the TransactionCallback interface and pass it to the TransactionTemplate execute method for execution. In this way, you don’t need to repeat the boilerplate transaction management code for this block.", True,y,FALSE   ,n,,,,,,
+Transaction Management, Spring (since version 2.0) offers a transaction advice that can be easily configured via the:,rx:advice,n,bx:advice,n,tx:advice,y,none of the mentioned,n,,
+Transaction Management, You can omit the transaction-manager attribute in the element if your transaction manager has the name transactionManager.,TRUE,y,FALSE ,n,,,,,,
+Transaction Management,"Spring’s transaction support offers a set of technology-independent facilities, including transaction managers.", org.springframework.transaction.PlatformTransactionManager,n,org.springframework.transaction.support.TransactionTemplate,n, all of the mentioned,y, none of the mentioned,n,,
+Transaction Management,"Spring’s transaction support offers a set of technology-independent facilities, including transaction managers.", org.springframework.transaction.PlatformTransactionManager,n,org.springframework.transaction.support.TransactionTemplate,n, all of the mentioned,y, none of the mentioned,n,,
+Transaction Management, The PlatformTransactionManager interface provides methods for working with transactions:,getTransaction(TransactionDefinition definition),n, commit(TransactionStatus status),n, rollback(TransactionStatus status),y,all of the mentioned,n,,
+Transaction Management, The PlatformTransactionManager interface provides methods for working with transactions:,getTransaction(TransactionDefinition definition),n, commit(TransactionStatus status),n, rollback(TransactionStatus status),y,all of the mentioned,n,,

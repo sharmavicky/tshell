@@ -1,0 +1,74 @@
+
+<div class="container-fluid">
+    <div class="titlename">Question<hr></div>
+  <div class="row">
+    <!--first part-->
+    <div class="col-lg-8 col-md-7 col-sm-12 col-12">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-12 ts-card cardsColumns">
+        <div class="headerTitle">Manage Questions </div>
+
+        <!--select skill-->
+        <div class="input-group mb-3 datafield">
+          <input type="text" class="form-control formInput" placeholder="Choose a skill to manage questions" 
+            aria-label="Recipient's username" aria-describedby="basic-addon2" 
+            [(ngModel)]="name" (keyup)="pressSkill(name);disableAddbtn();" id="ajax" list="json-datalist" 
+              (change)="currentSkill(name)" autocomplete="off">
+          <datalist id="json-datalist">
+            <select>
+              <option *ngFor="let skill of skillList" [value]="skill[0]"></option>
+            </select>
+          </datalist>
+        </div>
+
+          <!--search button-->
+          <div class="col-lg-12 col-md-12 col-sm-12 col-12 datafield" *ngIf="show">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Find if a question already exists" (keyup)="disableAddbtn();">
+              <div class="input-group-append" (click)="showAddbtn()">
+                <button class="btn btn-secondary buttonColour" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!--add-->
+          <div class="col-lg-12 col-md-12 col-sm-12 col-12 datafield" *ngIf="showAddButton">
+            <button type="button" [routerLink]="['/addquestion']" class="btn btn-ts-primary">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+
+          <!--sangamesh portion-->
+      </div>
+    </div>
+
+
+    <!--second part-->
+    <div class="col-lg-4 col-md-5 col-sm-12 col-12">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 cardColour">
+          <div class="card ts-card">
+            <div class="card-body">
+              <div class="headerTitle">Review Questions </div>
+              <table class="table">
+                <tbody *ngFor="let count of countList">
+                  <tr>
+                    <td>{{count[1]}}</td>
+                    <td>({{count[0]}})</td>
+                    <td>
+                      <button type="button" [routerLink]="['/reviewq',count[2],count[1]]" 
+                        class="btn btn-ts-primary">
+                        Review
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

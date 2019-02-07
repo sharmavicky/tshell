@@ -1,0 +1,23 @@
+<div class="row rowHeading" >
+  <div class="h3 ">Recently
+    Added Skills</div>
+</div>
+<div class="row row2Style">
+  <div>
+    <div *ngIf="recentSkillListLength==0">
+      <div>There are no skills added in last 30 days</div>
+    </div>
+    <div *ngIf="recentSkillListLength>0">
+      <h2 *ngFor="let recentSkill of recentSkillList" class="ngFor">
+        <a [routerLink]="['/skills',recentSkill[1]]" class="badge badge-primary viewskills">{{recentSkill[1]}}</a>
+      </h2>
+    </div>
+    <div *ngIf="error">
+        <div class="error-padding-top">
+            <app-error></app-error>
+        </div>
+    </div> 
+
+  </div>
+</div>
+

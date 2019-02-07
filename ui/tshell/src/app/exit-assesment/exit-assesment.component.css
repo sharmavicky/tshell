@@ -1,0 +1,699 @@
+.qbody {
+  background-color: white !important;
+}
+
+/******   Question Palette *******/
+
+/*:host(body){
+  background-color: white;
+}*/
+
+/* :host-context(.qbody) body {
+  background-color:white !important;
+} */
+/* 
+body{
+  background-color: white !important;
+} */
+
+.sidenav {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  background-color: #fffdfd;
+  overflow-x: hidden;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 15px;
+
+}
+
+/******   Displaying Questions *******/
+.quest {
+  font-family: 'Segoe UI';
+  display: inline-flex;
+  font-weight: 450;
+  font-size: 20px;
+  width: 100%;
+  color: black;
+}
+
+.question-pre {
+  white-space: pre-wrap;
+}
+
+
+.test-name {
+  padding-top: 2px;
+}
+
+/******  Timer *******/
+.time-badge {
+  width: 150px;
+  height: 19px;
+  vertical-align: middle;
+}
+
+#timer {
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 25px;
+  text-align: center;
+  color: #f07c22;
+
+}
+
+#countdowntimer {
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 25px;
+  text-align: center;
+  color: #f07c22;
+
+}
+
+.header-legends {
+  font-size: 17px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.span-blocks {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.modal-span-blocks {
+  padding-right: 1px;
+  padding-left: 0px;
+}
+
+
+.legends {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  font-weight: 500;
+  color: rgb(61, 61, 61);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.modal-legends {
+  display: flex;
+  font-weight: 500;
+  color: rgb(61, 61, 61);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  vertical-align: middle;
+}
+
+/******   Questions Navigation Buttons *******/
+.next-nav-button {
+  width: 125px;
+  margin-left: 10px;
+}
+
+.navigate-buttons-div {
+  display: flex;
+  padding-top: 20px;
+  padding-right: .5rem;
+}
+
+.previous-nav-button {
+  width: 125px;
+  margin-left: 10px;
+  background-color: #3498db;
+  color: white;
+}
+
+/******  Styles for options of the questions *******/
+.options-div {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  box-sizing: border-box;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0.3px;
+}
+
+
+.legend-buttons {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  width: 38px;
+  height: 35px;
+  margin-left: 5px;
+  margin-right: 6px;
+  margin-bottom: 10px;
+
+}
+
+.answered-legend-buttons {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: inline-block;
+  font-weight: 450;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1.5px solid #28a745;
+  /* padding: .375rem .75rem; */
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  width: 33px;
+  height: 35px;
+  margin-left: 5px;
+  margin-right: 6px;
+  margin-bottom: 10px;
+  color: #28a745;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.unanswered-legend-buttons {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: inline-block;
+  font-weight: 450;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1.4px solid grey;
+  /* padding: .375rem .75rem; */
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  width: 33px;
+  height: 35px;
+  margin-left: 5px;
+  margin-right: 6px;
+  margin-bottom: 10px;
+  color: grey;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.default-cursor {
+  cursor: default;
+}
+
+/******  Custom Scrollbar CSS *******/
+#scrollbar-1::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(90, 47, 47, 0.3);
+  border-radius: 10px;
+  background-color: rgb(204, 204, 204);
+}
+
+#scrollbar-1::-webkit-scrollbar {
+  width: 8px;
+  background-color: rgb(204, 204, 204);
+}
+
+#scrollbar-1::-webkit-scrollbar-thumb {
+
+
+  /* border-radius: 10px;
+          background-color: #FFF;
+          background-image: -webkit-gradient(linear,
+                                             40% 0%,
+                                             75% 84%,
+                                             from(#4D9C41),
+                                             to(#19911D),
+                                             color-stop(.6,#54DE5D))*/
+
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: rgb(60, 177, 255);
+}
+
+
+
+
+/*
+.question-buttons {  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  display: inline-block;  font-weight: 400;  text-align: center;  white-space: nowrap;  vertical-align: middle;  -webkit-user-select: none;  -moz-user-select: none;  -ms-user-select: none;  user-select: none;  border: 1px solid transparent;  font-size: 1rem;  line-height: 1.5;   width: 35px;  height: 40px;  margin-bottom: 10px;
+}*/
+
+
+.question-legends {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: inline-block;
+  font-weight: 550;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  line-height: 1.5;
+  width: 45px;
+  height: 40px;
+  padding: 5px;
+}
+
+.answer-legends {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: inline-block;
+  font-weight: 550;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  line-height: 1.5;
+  width: 45px;
+  height: 40px;
+  padding: 5px;
+}
+
+.example-radio-group {
+  display: inline-block;
+  flex-direction: column;
+  width: 100%;
+  color: black;
+}
+
+.example-selected-value {
+  margin: 15px 0;
+}
+
+.questions {
+  margin-right: 300px;
+  padding: 0px 4px;
+}
+
+#mobileQuestionView {
+  display: none;
+}
+
+/* Until  767.98px is reached ; i.e. ; in mobile view */
+@media (max-width: 767.98px) {
+  #sideNav {
+    display: none;
+  }
+
+  .questions {
+    margin-right: 2px;
+
+  }
+
+  .question-legends {
+    margin-right: 6px;
+  }
+
+  .options-div {
+    font-size: 0.9rem;
+  }
+
+
+  .answer-legends {
+    display: none;
+  }
+
+  #mobileQuestionView {
+    display: block;
+  }
+
+  .quest {
+    font-size: 15px;
+    letter-spacing: 0.16px;
+    display: contents;
+  }
+
+  #countdowntimer {
+    font-size: 10px;
+    font-weight: 100;
+  }
+
+  #timer {
+    font-size: 14px;
+    font-weight: 100;
+  }
+
+  .header-legends {
+    font-size: 14px;
+  }
+
+  .header-legends h5 {
+    font-size: 14px;
+  }
+
+  .test-name {
+    padding-top: 2px;
+  }
+
+  .unanswered-legend-buttons {
+    height: 35px;
+  }
+
+  .answered-legend-buttons {
+    height: 35px;
+  }
+
+}
+
+/*When Media size is 767.98 -- I-pad / tablets */
+@media (min-width: 767.98px) {
+  .sidenav {
+    width: 260px;
+    padding-right: 5px;
+  }
+
+  .questions {
+    margin-right: 260px;
+  }
+
+  .quest {
+    font-size: 16px;
+  }
+
+  .options-div {
+    font-size: 16px;
+  }
+
+  .span-blocks {
+    padding-right: 1px;
+    padding-left: 0px;
+  }
+
+  #mobileQuestionView {
+    display: none;
+  }
+
+  .header-legends {
+    font-size: 15px;
+  }
+
+  .header-legends h5 {
+    font-size: 15px;
+  }
+
+  .unanswered-legend-buttons {
+    height: 29px;
+  }
+
+  .answered-legend-buttons {
+    height: 29px;
+  }
+
+}
+
+/* When Media size is 767.98 -- Laptops and above*/
+@media (min-width: 992px) {
+  .sidenav {
+    width: 300px;
+  }
+
+  .questions {
+    margin-right: 300px;
+
+  }
+
+
+  .quest {
+    font-size: 20px;
+  }
+
+  .options-div {
+    font-size: 20px;
+  }
+
+  .span-blocks {
+    padding-right: 2px;
+    padding-left: 0px;
+  }
+
+  .unanswered-legend-buttons {
+    height: 35px;
+  }
+
+  .answered-legend-buttons {
+    height: 35px;
+  }
+}
+
+
+
+/****************************    RADIO & CHECKBOX  BUTTONS CUSTOM STYLING   **************************************************/
+
+
+.option-radio-label {
+  cursor: pointer;
+  display: block;
+  align-items: center;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+/* Buttons */
+
+.option-container input:not([type=radio]):not([type=checkbox])[type=reset] {
+  display: none;
+}
+
+.option-container input:not([type=radio]):not([type=checkbox])[type=submit] {
+  color: #fff;
+  background-color: #00f;
+  border: .1em solid #00f;
+  border-radius: .2em;
+  font-weight: bold;
+  padding: .5em;
+  text-align: center;
+  width: 100%;
+  box-shadow: .25em .25em .5em rgba(0, 0, 0, .5);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.option-container input:not([type=radio]):not([type=checkbox])[type=submit]:focus,
+input:not([type=radio]):not([type=checkbox])[type=submit]:hover {
+  color: #00f;
+  background-color: #fff;
+  outline: 0;
+}
+
+.option-container input:not([type=radio]):not([type=checkbox])[type=submit]:active {
+  box-shadow: 0 0 .5em rgba(0, 0, 0, .5);
+}
+
+/* Radios and checkboxen */
+
+.option-container input[type=radio],
+input[type=checkbox] {
+  position: absolute;
+  top: auto;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE 6/7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+  /* https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe */
+}
+
+.option-container input[type=radio]+label,
+input[type=checkbox]+label {
+  display: block;
+  padding: .1em;
+  padding-left: 2.4em;
+  /* text-indent: 0em; */
+  max-width: calc(100% - 1.2em);
+  /*margin: -1em 0;*/
+}
+
+.option-container fieldset>div input[type=radio]+label {
+  margin: -1em 0;
+}
+
+.option-container input[type=radio]:focus+label,
+input[type=checkbox]:focus+label {
+  color: black;
+
+}
+
+.option-container input[type=radio]+label:before,
+input[type=checkbox]+label:before {
+  content: '';
+  background: #fff;
+  border: .1em solid rgba(0, 0, 0, .75);
+  background-color: rgba(255, 255, 255, .8);
+  display: block;
+  box-sizing: border-box;
+  float: left;
+  width: 1em;
+  height: 1em;
+  margin-left: -1.5em;
+  margin-top: .15em;
+  vertical-align: top;
+  cursor: pointer;
+  text-align: center;
+  transition: all .1s ease-out;
+}
+
+.option-container input[type=radio]+label:before {
+  border-radius: 100%;
+}
+
+.option-container input[type=radio]:disabled+label:before,
+input[type=checkbox]:disabled+label:before {
+  border: .1em solid rgba(0, 0, 0, .1);
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.option-container input[type=radio]:disabled+label,
+input[type=checkbox]:disabled+label {
+  color: #ccc;
+}
+
+.option-container input[type=radio]:checked+label:before {
+  background-color: #00f;
+  box-shadow: inset 0 0 0 .15em rgba(255, 255, 255, .95);
+}
+
+.option-container input[type=checkbox]+label:before {
+  /*content: '\00d7';*/
+  /*content: '\002718';*/
+  /*content: '\002715';*/
+  /*content: '\0025a0';*/
+  content: '\002713';
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.15;
+  color: rgba(0, 0, 255, 0);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.option-container input[type=checkbox]:checked+label:before {
+  color: rgb(27, 27, 216);
+  line-height: .75;
+  text-shadow: .05em 0 0 rgba(0, 0, 255, 1), -.05em 0 0 rgba(0, 0, 255, 1);
+}
+
+.option-container input[type=checkbox]:disabled+label:before {
+  color: rgba(255, 255, 255, 0);
+}
+
+.option-container input[type=checkbox]:checked:disabled+label:before {
+  color: #bbb;
+  text-shadow: .05em 0 0 #bbb, -.05em 0 0 #bbb;
+}
+
+
+/********************   CUSTOM BUTTON STYLING ***********************************************/
+/*
+.btn {
+  color: #fff;
+  background-color: transparent;
+  outline: 0;
+  -moz-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  border: 0;
+  padding: 7.5px 30px 7.5px 30px;
+  font-size: 1em;
+}
+
+.btn:hover {
+box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.20);
+}
+
+.btn-ts-lg {
+  padding: 10px 37.5px 10px 37.5px;
+  font-size: 1.2em;
+}
+
+.btn-ts-md {
+  padding: 7.5px 30px 7.5px 30px;
+  font-size: 1em;
+}
+
+.btn-ts-sm {
+  padding: 6px 22.5px 6px 22.5px;
+  font-size: 0.8em;
+}
+
+.btn-ts-primary {
+  background-color: #3498db;
+}
+.btn-ts-primary:hover {
+  background-color: #217dbb;
+}
+.btn-ts-primary:active {
+  -moz-box-shadow: inset 0 0 100px #196090;
+  -webkit-box-shadow: inset 0 0 100px #196090;
+  box-shadow: inset 0 0 100px #196090;
+}
+
+.btn-ts-danger {
+  background-color: #e74c3c;
+}
+.btn-ts-danger:hover {
+  background-color: #d62c1a;
+}
+.btn-ts-danger:active {
+  -moz-box-shadow: inset 0 0 100px #a82315;
+  -webkit-box-shadow: inset 0 0 100px #a82315;
+  box-shadow: inset 0 0 100px #a82315;
+}
+.btn-ts-cancel {
+  background-color: #7f8c8d;
+}
+.btn-ts-cancel:hover {
+  background-color: #667273;
+}
+.btn-ts-cancel:active {
+  -moz-box-shadow: inset 0 0 100px #4e5758;
+  -webkit-box-shadow: inset 0 0 100px #4e5758;
+  box-shadow: inset 0 0 100px #4e5758;
+}
+
+
+.btn-ts-outline-primary {
+  border: 2px solid #3498db;
+  color: #3498db;
+}
+.btn-ts-outline-primary:hover {
+  background-color: #3498db;
+  color: #fff;
+}
+.btn-ts-outline-primary:active {
+  background-color: #217dbb;
+}
+
+.btn-ts-outline-danger {
+  border: 2px solid #e74c3c;
+  color: #e74c3c;
+}
+.btn-ts-outline-danger:hover {
+  background-color: #e74c3c;
+  color: #fff;
+}
+.btn-ts-outline-danger:active {
+  background-color: #d62c1a;
+}
+
+.btn-ts-close {
+  border: 2px solid #7f8c8d;
+  color:#7f8c8d;
+}
+.btn-ts-close:hover {
+  background-color: #7f8c8d;
+  color: #fff;
+}
+.btn-ts-close:active {
+  background-color: #667273;
+}*/

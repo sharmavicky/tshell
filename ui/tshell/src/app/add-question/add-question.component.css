@@ -1,0 +1,181 @@
+label{
+  font-size: large;
+  font-weight: 500;
+}
+#optionButton{
+ zoom:1.5;
+ color: #3498db;
+}
+#optionButton:hover{
+cursor: pointer;
+color: red;
+}
+.addOptionButton{
+background-color: #3498db;
+zoom:0.5;
+margin-left:10px;
+}
+.fa-pencil-alt{
+color: #3498db;
+height: 25px;
+width:25px;
+}   
+.container{
+margin-bottom:40px; 
+}
+/* .checkmark{
+height: 25px;
+width:25px;
+
+} */
+.lhsNoteSpan{
+float: right;
+color:gray;
+}
+.card{
+margin-top: 10px;
+padding: 3px 3px;
+}
+.p{
+font-weight: bold;
+}
+
+a{
+color:rgb(105, 104, 104);
+}
+.addOptionBtn{
+font-size: 12px;
+height: 19px;
+padding:0px 0px;
+width:19px;
+}
+.approveBtnCmn{
+text-align: center;
+}
+.baseRow{
+padding-top: 20px;
+}
+.rejectBtnCmn{
+text-align: center;
+}
+.existingQuestion{
+border-bottom:solid;
+border-color:rgb(177, 176, 176);
+border-width:1px;
+}
+/* .lhsApproveBtn{
+font-size: 14px;
+padding:0px 4px;
+width:100%;   
+} */
+
+.lhsApproveRejectBtnSpan{
+float: right;
+}
+.lhsNoteSpan{
+float: right;
+color:gray;
+}
+.lhsOptionLabelCol{
+text-align: center;
+}
+/* .lhsRejectBtn{
+font-size: 14px;  
+padding:0px 4px;
+width:100%;
+} */
+/* .nxtQuestionBtn{
+padding:0;
+width:100%
+} */
+.nxtQuestionCol{
+text-align: right;
+}
+.optionList{
+font-size:13px;
+}
+.preQuestionCol{
+border-right: solid;
+border-right-color: lightgrey; 
+border-width:1px;
+
+}
+/*.preQuestionBtn{
+padding:0;
+width:100%
+}*/
+.questionDef{
+font-size:12px;
+}
+.revQuestionHeader{
+text-align: center;
+}
+/* --------- this code is for custom styling of the buttons specified below --------------
+.rhsApproveBtn{
+font-size: 13px;
+padding:2px 4px;  
+} */
+.rhsNoteSpan{
+float:right;
+color:gray;
+}
+.rhsOptionsBtn{
+color:#007bff;
+box-shadow:none;
+font-size:13px;
+}
+.rhsOptionsBtn:hover{
+color:#0056b3;
+text-decoration: underline;
+background-color: transparent !important;
+border-color: transparent !important;
+box-shadow:none;
+}
+.rhsOptionsBtnSpan{
+float:right;
+}
+.rhsQId{
+font-size:13px;
+}
+.rhsQIdLabel{
+font-size:13px;
+}
+/* --------- this code is for custom styling of the buttons specified below --------------
+.rhsRejectBtn{
+font-size: 13px;
+padding:2px 4px;   
+} */
+/* .reviewQuestionsContainer{
+padding-top:80px;
+} */
+.searchSpan{
+color:rgb(146, 146, 146);
+}
+.searchSpan:hover{
+cursor: pointer;
+color:rgb(119, 119, 119);
+}
+.questionCardBody{
+margin-left:13px;
+background-color: #fbfbfb;
+border-radius: 3px;
+}
+.modalBody{
+height: 250px;
+}
+.topicRow{
+margin-left:3px;
+}
+.maxOptions{
+color:red;
+}
+.submitButton{
+margin-top: 3px;
+float: right;
+}
+.optionCardBody{
+padding: 5px;
+}
+.uploadButton{
+margin-top: 2px;
+}

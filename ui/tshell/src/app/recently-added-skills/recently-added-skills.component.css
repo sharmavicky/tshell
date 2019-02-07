@@ -1,0 +1,28 @@
+
+.viewskills{ 
+    margin:20px;  
+}
+.badge{
+    font-weight: 400;
+    line-height: 1.2;   
+    padding: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 8px;
+}
+.rowHeading{
+    margin:3px; 
+    padding:10px;
+    margin-bottom:0px;
+}
+.h3{
+    text-align: center
+}
+.row2Style{
+    margin:0px;
+    padding:10px;
+    margin-bottom:0px;
+}
+.ngFor{
+    display: inline-block
+}
+

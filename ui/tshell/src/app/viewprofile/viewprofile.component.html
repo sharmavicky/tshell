@@ -1,0 +1,288 @@
+<div class="container-fluid">
+  <div class="titlename">Profile
+    <hr>
+  </div>
+  <div class="row username">
+    <div class="col-lg-1 col-12 col-sm-1 col-md-0">
+
+    </div>
+    <div class="col-lg-10 col-12 col-sm-10 col-md-12 ts-card card cardalignment">
+      <div class="row">
+          <div class="col-lg-3 col-sm-3 col-12 col-md-3 imagepreview">
+          <div class="row">
+            <div class="col-lg-12 col-md-1 col-sm-1 col-2"></div>
+            <div class="col-lg-12 col-md-10 col-sm-10 col-8 ">
+
+              <div class="avatar-upload">
+                <form #imageForm=ngForm>
+                  <div class="avatar-edit">
+                    <!--  <input type="file" id="imageUpload"  #Image accept="image/*"  (change)="handleFileInput($event.target.files)">
+                     <label for="imageUpload"></label> -->
+                  </div>
+                  <div class="avatar-preview">
+                    <img [src]="imageUrl" id="imagePreview" />
+                  </div>
+                </form>
+              </div>
+
+            </div>
+            <div class="col-lg-12 col-md-1 col-sm-1 col-2"></div>
+          </div>
+
+        </div>
+        <div class="col-lg-9 col-sm-9 col-12 col-md-auto userdetails">
+          <div class="row">
+            <div class="col-lg-12 col-sm-12 col-12 col-md-12">
+              <span class="userdetail">
+
+                {{ userDetails.name}}<span class="employeeid">({{ userDetails.employeeId}})
+                  <input type="hidden" value="{{userDetails.employeeId}}" #employeeid> </span>
+              </span>
+              <span class="editprofile"><i class="fas fa-user-edit" data-toggle="modal" data-target="#exampleModal1"
+                  data-whatever="@mdo" (click)="modalOpen()"></i></span>
+              <span class="useremail">
+                <br>{{ userDetails.email}}
+              </span>
+              <span class="badge badge-info rolename" >
+                  {{userDetails.role.name}}</span>
+            </div>
+          </div>
+          <br>
+
+          <div *ngIf="userDetails.role.name=='sme'">
+            <label class="review">Skills for which you can review and approve uploaded questions</label>
+            <h4>
+              <span class="badge badge-secondary viewskills" *ngFor="let skill of userDetails.skills ">{{skill.name}}</span>
+              <i class="fas fa-plus-square addskill" data-toggle="modal" data-target="#exampleModal3" data-whatever="@mdo"
+                (click)="modalOpen()"></i>
+            </h4>
+
+            <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Skills</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div class="modal-body">
+                    <div *ngIf="dbstatus" class="alert alert-danger" role="alert">
+                      <h6>
+                        Skill Already present for the user!
+                      </h6>
+                    </div>
+                    <div *ngIf="arraystatus" class="alert alert-danger" role="alert">
+                      <h6>
+                        Duplicate Skill!
+                      </h6>
+
+                    </div>
+
+                    <!--  <div *ngIf="emptyinput" class="alert alert-danger" role="alert">
+                          <h6>
+                        Add atleast 1 skill! 
+                          </h6>
+      
+                        </div> -->
+
+
+                    <div class="input-group mb-3 searchskill">
+
+
+
+                      <input type="text" class="form-control addskill" placeholder="Skill name" aria-label="Recipient's username"
+                        aria-describedby="basic-addon2" [(ngModel)]="name" (keyup)="pressSkill(name)" id="ajax" list="json-datalist"
+                        (change)="currentSkill(name)" autocomplete="off">
+                      <datalist id="json-datalist">
+                        <select>
+                          <option *ngFor="let skill of skillList" [value]="skill[0]"></option>
+                        </select>
+                      </datalist>
+                      <button (click)="skilladded(skillList[0])" class="btn btn-ts-primary">Add</button>
+                    </div>
+
+                    <div class="row" *ngIf="isAddButtonClicked">
+                      <div class="col-lg-12">
+
+                        <ul *ngFor="let skill of userskills" class="list-inline marginzero skillname">
+                          <li class="badge badge-primary litopic">{{skill.name}} &nbsp; <i class="fa fa-times makepointer"
+                              (click)="removeSkill(skill)"></i></li>
+                        </ul>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-ts-primary" (click)="saveskill()" [disabled]="!emptyinput"
+                      data-dismiss="modal">Save</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <form [formGroup]="form1 " (ngSubmit)="save()">
+                  <div class="modal-body">
+                    <div *ngIf="updateStatus" class="alert alert-success">Updated Successfully</div>
+                    <div *ngIf="!updateStatus">
+
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Employee Id:</label>
+                        <input type="text" class="form-control" formControlName="employeeId" readonly>
+                      </div>
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Name</label>
+                        <input type="text" class="form-control" formControlName="name">
+                        <div *ngIf="form1.get('name').touched && form1.get('name').invalid">
+                          <div *ngIf="form1.get('name').errors.required" class="danger validation">Name is required</div>
+                          <div *ngIf="form1.get('name').errors.maxlength" class="danger validation">Name must contain
+                            maximum 45 characters</div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Email</label>
+                        <input type="text" class="form-control" formControlName="email">
+                        <div *ngIf="form1.get('email').touched && form1.get('email').invalid">
+                          <div *ngIf="form1.get('email').errors.required" class="danger validation">Email is required</div>
+                          <div *ngIf="form1.get('email').errors.pattern" class="danger validation">Email pattern is not
+                            valid. Example: "tShell@cognizant.com"</div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <!-- <div *ngIf="updateStatus">
+                        <button type="button" class="btn btn-ts-cancel" data-dismiss="modal" >Close</button>
+                    </div> -->
+                    <div *ngIf="!updateStatus">
+                      <button type="submit" class="btn btn-ts-primary" [disabled]="!form1.valid">Update</button>
+                    </div>
+
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-lg-1 col-12 col-sm-1 col-md-0">
+
+    </div>
+  </div>
+
+  <div class="row assessmentskill">
+    <div class="col-lg-1 col-sm-12">
+
+    </div>
+    <div class="col-lg-10 col-sm-12">
+
+      <div class="row assessmentskills">
+        <div class="col-lg-12 col-sm-12 " *ngIf="assessmentsData.length==0 && userDetails.id>0">
+          <span class="ts-card card nottaken">Assessment yet to be taken</span>
+        </div>
+        <div class="col-lg-4 col-12 col-sm-6 col-md-6 skillnames" *ngFor="let skill of assessmentsData">
+
+          <div class=" ts-card card skilltitle">
+            <div class="card-body">
+              <h2>{{skill.skillname}}</h2>
+              <hr>
+              <div *ngFor="let assessment of skill.assessments">
+                <div class="row">
+                  <div class="col-lg-5 col-5 col-sm-5">
+                    <span class="badge assessmententry" *ngIf="assessment.type=='Entry'">
+                      <input type="hidden" value="assessment.skill.id" #skillid>
+                      {{assessment.type}}
+                    </span>
+                    <span class="badge assessmentexit" *ngIf="assessment.type=='Exit'">
+                      {{assessment.type}}
+                    </span>
+                    <div class="col-lg-7 col-7 col-sm-7" *ngIf="assessment.type!='Exit' && assessment.type=='Entry' && !assessment.skill ">
+                      <span class="testdate"><span>Assessment yet to be taken</span></span>
+                    </div>
+                    <br><span class="testdate">{{assessment.date}}</span>
+                  </div>
+                  <div class="col-lg-5 col-5 col-sm-5">
+                    <span class="percent">{{assessment.score}}<span class="assessmentscore">%</span></span>
+                  </div>
+                  <div class="col-lg-2 col-2 col-sm-2" *ngIf="service.role=='admin'">
+                    <div class="vertical-center"><button data-toggle="modal" [attr.data-target]="'#myModal'+assessment.id"
+                        class="fas fa-ellipsis-v show-result"></button></div>
+
+                  </div>
+                </div>
+                <hr>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-1 col-sm-12">
+
+    </div>
+  </div>
+
+
+
+
+</div>
+
+
+
+<!-- Modal -->
+<div [id]="'myModal'+assessment.id" class="modal fade" role="dialog" *ngFor="let assessment of assessmentsForQn">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <h4 class="modal-title">Entry Test Answers</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-2 col-3 col-md-2 col-sm-2" *ngFor="let item of assessment.assessmentQuestions; let i = index"
+            [attr.data-index]="i">
+            <div class="badge answercardsright" *ngIf="item.correct">
+              {{i+1}}
+            </div>
+            <div class="badge answercardswrong" *ngIf="!item.correct">
+              {{i+1}}
+            </div>
+          </div>
+
+        </div>
+        <hr>
+
+        <div class="badge correctanswer">0</div>&nbsp;Correct
+        Answers&nbsp;&nbsp;&nbsp;
+        <div class="badge wronganswer">0</div>&nbsp;Incorrect
+        Answers
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ts-cancel btn-ts-md" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

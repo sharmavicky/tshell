@@ -1,0 +1,143 @@
+#loginbox {
+  margin-top: 140px;
+}
+
+#card1 {
+  text-align: center;
+  font-family: Segoe UI;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+#card2 {
+  padding-top: 30px;
+}
+
+#card3 {
+  padding-top: 10px;
+  font-size: 85%;
+  padding-left: 15px;
+}
+
+#card4 {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+#card5 {
+  float: right;
+  font-size: 85%;
+  font-weight: 700;
+  position: relative;
+  top: -10px;
+}
+
+#card6 {
+  padding: 0px 0px 9px 0px;
+  text-align: center;
+  font-size: 85%;
+}
+
+#card7 {
+  width: 100%;
+  color: white;
+}
+
+#card8 {
+  color: red;
+  margin-left: 20px;
+}
+
+.forgotPassword {
+  background-color: white;
+  color: #007bff;
+}
+.forgotPasswordColor{
+  color: #007bff !important;
+  
+}
+
+.log {
+  color: whitesmoke;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 55px;
+  margin-top: 220px;
+  }
+
+.container-fluid{
+  background-image: url("/assets/images/im1.jpg");
+  min-height:90vh;
+}
+
+@media screen and (max-width: 600px){
+  #loginbox {
+    margin-top: 80px;
+  } 
+  .log {
+   font-size:xx-large;
+  margin-top: 20px;
+  }
+}
+
+
+
+.errormessage{
+color: red;
+}
+.requestSucesss{
+  color: #008000;
+  font-size: 15px;
+}
+.requestfailure{
+  color:#ff3333;
+  font-size: 15px;
+}
+.image{
+  margin-left: 200px;
+  width: 45px;
+}
+.reset{
+  color: #007bff
+}
+
+@media screen and (max-width: 600px){
+  #loginbox {
+    margin-top: 60px;
+  }  
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.forgotpass{
+  float: right;
+  padding-right: 12px;
+  cursor: pointer;
+}
+
+.signup{
+color:#007bff;
+text-decoration: none;
+}
+
+.loginInvalidCredential{
+  display: none;
+
+}
+
+.resendButton{
+  background:none;
+  color: #007bff;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  float:right;
+}
+.resendButton:focus { outline: none; }
+.resethead{
+  margin-left: 20px;
+}

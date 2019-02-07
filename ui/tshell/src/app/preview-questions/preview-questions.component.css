@@ -1,0 +1,72 @@
+.card{
+    margin-top:10px; 
+    margin-bottom:10px;
+    
+}
+.container { 
+    padding-top: 65px; 
+}
+.card-header{
+    cursor: pointer;
+    padding-top:18px ;padding-bottom:0px;
+}
+.card-body{
+    margin-left: 20px ;
+}
+.action{
+    margin-top:50px;
+    margin-bottom: 50px;
+}
+.answer{
+    color:#006600;
+    font-weight: 400;
+}
+/* .option{
+    color: #07C;
+    font-weight: 500;
+} */
+.correctOption{
+    color:#1a1a1a;
+    font-weight: 500;
+}
+.error{
+    float: right;
+    font-weight: 50;
+    font-size: 18px;
+    color: #e61111;
+
+}
+.invalid-alert{
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    font-weight: 500;
+}
+.actions{
+    padding-left: 10px;
+}
+.btn-ts-sm{
+    margin-top: 15px;
+}
+pre{white-space:pre-wrap;
+}
+.correctOption{
+    font-weight: 600;
+}
+.wrongOption{
+    font-weight: 300;
+}
+.errorbadge{
+    float:right;
+    margin-bottom: 10px;
+}
+.icon{
+    margin-left: 15px;
+    font-size:18px;
+}
+.lengtherrorbadge{
+    margin-bottom: 15px;
+}
+.topic{
+    float: right;
+}

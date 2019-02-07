@@ -1,0 +1,52 @@
+<!-- Modal -->
+<div class="modal-lg">
+  <form [formGroup]="addReferenceSkillForm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4>
+          Add Reference Skills
+        </h4>
+        <hr>
+        <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"><i class="fa fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="container ">
+
+          <div class="row">
+            <div class="col-lg-12"> Add By Skill Name </div>
+          </div>
+          <!-- /////////////////////////////////// -->
+          <div class="row ">
+            <div class="col-lg-12 col-12 col-sm-12 col-md-12 ">
+
+              <div class="form-group">
+                <ng-template #rt let-r="result" let-t="term">
+                  <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+                </ng-template>
+                <!-- <input type="text" class="form-control" formControlName="referenceSkillName" #topicname placeholder="Enter topic name"> -->
+                <input id="typeahead-template" formControlName="referenceSkill" type="text" class="form-control"
+                  [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Search Skills" [resultTemplate]="rt"
+                  [inputFormatter]="formatter" (selectItem)="itemSelected($event)" />
+                <div *ngIf="sameSkill" class="aletry" role="alert">
+                  Empty or Duplicate skill name!
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12">
+              <ul *ngFor="let item of referenceSkillName" class="list-inline marginzero" style="display:inline-block">
+                <li class="badge badge-secondary litopic">{{item.referenceSkill.name}}&nbsp;</li>&nbsp;&nbsp;
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ts-primary makecross" (click)="submitReferenceSkill();">Update
+          Skill</button>
+      </div>
+    </div>
+  </form>
+</div>

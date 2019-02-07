@@ -1,0 +1,174 @@
+<!--
+<nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1">tShell</span>
+  </nav>-->
+<!--****************       RIGHT SIDE FIXED  QUESTION PALLETTE     ****************************************-->
+<div *ngIf="!error" id="sideNav">
+  <div class="sidenav">
+    <div class=" badge badge-info float-right"></div>
+    <h3 class=" border-bottom border-dark pb-4 text-center "> Question {{pager.index + 1}} of {{pager.count}}. </h3>
+    <div class="p-1 scroll-questions" id="scrollbar-1">
+
+      <span class="col-lg-1 col-sm-1 span-blocks" *ngFor="let question of questionIds; let index = index;">
+        <button type="button" class="{{ correctanswer(index)  == 'Answered'? 'answered-legend-buttons' : 'unanswered-legend-buttons' }}"
+          (click)="goTo(index)">{{index + 1}}</button>
+      </span>
+    </div>
+    <div class="legends pt-2">
+      <span class="unanswered-legend-buttons default-cursor"> </span>Not Answered
+      <span class="answered-legend-buttons default-cursor"> </span> Answered
+    </div>
+    <div><button class="btn btn-ts-primary btn-block pt-1 mt-3" data-toggle="modal" data-target="#submitConfirmation">Submit
+        Test</button></div>
+  </div>
+
+</div>
+
+<div *ngIf="!error" class="questions qbody ">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-lg-12 col-md-12">
+
+
+        <!--****************       MOBILEVIEW   QUESTION PALLETTE MODAL TOGGLE BUTTON *****************************-->
+        <button type="button" class="btn btn-ts-primary btn-block mt-2" id="mobileQuestionView" data-toggle="modal"
+          data-target="#questionPallete">
+          Navigate Between Questions
+        </button> <!-- <a class="btn btn-primary " id="myModalBtn">Launch demo modal</a> -->
+
+
+        <!--****************       DISPLAYING QUESTIONS  *****************************-->
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="mt-2 badge badge-info time-badge float-right">Time: {{ellapsedTime}} /
+              {{duration}}</div>
+          </div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="display-question ">
+              <h3 class="border-bottom border-dark pb-3 test-name ">{{skillName | titlecase}} {{assessmentType |
+                titlecase}} Level Test</h3>
+            </div>
+
+
+            <div *ngFor="let question of filteredQuestions;">
+              <div class="quest pt-1">
+                <span class="question-legends btn-danger">Q{{pager.index + 1}}</span>
+                <div class="quest pl-3">
+                  <pre class="question-pre quest">{{question.question}}</pre>
+                </div>
+              </div>
+
+              <!--********************************       DISPLAYING OPTIONS  *****************************-->
+
+
+              <div class="options-div pt-4">
+                <span class="answer-legends btn-success">A. </span>
+                <div class="example-radio-group ">
+                  <div class=" option-container " *ngFor="let option of question.optionList">
+
+                    <span *ngIf="question.questionAnswerType.id == 1">
+                      <input type="radio" id="{{option.id}}" name="option" [value]="option.response" (change)="onSelect(question, option);"
+                        [checked]="option.response">
+                      <label for="{{option.id}}">{{option.description}}</label>
+                    </span>
+
+                    <span *ngIf="question.questionAnswerType.id == 2">
+                      <input id="{{option.id}}" type="checkbox" [value]="option.response" (change)="onSelect(question, option);"
+                        [checked]="option.response">
+                      <label for="{{option.id}}">{{option.description}}</label>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+
+              <!--********************************       DISPLAYING QUEST  PALLETTE VIA MODAL IN MOBILE VIEW  *****************************-->
+
+              <div class="modal fade" id="questionPallete" tabindex="-1" role="dialog" aria-labelledby="questionPalleteLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title text-center" id="questionPalleteModalLabel"> Question {{pager.index + 1}}
+                        of {{pager.count}}</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+
+                      <div class="scroll-questions" id="scrollbar-1">
+                        <span class="col-lg-1 col-sm-1 span-blocks" *ngFor="let question of questionIds; let index = index;">
+                          <button type="button" class="{{ correctanswer(index)  == 'Answered'? 'answered-legend-buttons' : 'unanswered-legend-buttons' }}"
+                            (click)="goTo(index)" data-dismiss="modal">{{index + 1}}</button>
+                        </span>
+                      </div>
+                      <div class="modal-legends pt-2">
+                        <span class="unanswered-legend-buttons default-cursor"> </span>Not Answered
+                        <span class="answered-legend-buttons default-cursor"> </span> Answered
+                      </div>
+                      <div><button class="btn btn-ts-primary btn-block pt-1" data-toggle="modal" data-dismiss="modal"
+                          data-target="#submitConfirmation">Submit Test</button></div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-ts-cancel" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+            <!--********************************       NAVIGATION BUTTONS  *****************************-->
+
+            <div class="text-center float-right navigate-buttons-div mb-3">
+              <span *ngIf="pager.index !=0">
+                <button class="btn btn-ts-primary previous-nav-button" (click)="goTo(pager.index - 1);">Prev</button>
+              </span>
+              <span *ngIf="pager.index + 1 != pager.count">
+                <button class="btn btn-ts-primary next-nav-button" (click)="goTo(pager.index + 1);">Next</button>
+              </span>
+              <span *ngIf="pager.index + 1 == pager.count">
+                <button class="btn btn-ts-primary next-nav-button" data-toggle="modal" data-target="#submitConfirmation">Finish
+                  Test</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div *ngIf="error" class="pt-5">
+  <div>
+    <app-error></app-error>
+  </div>
+</div>
+
+<!-- Confirm the submission of test with the user -->
+<div class="modal fade" id="submitConfirmation" tabindex="-1" role="dialog" aria-labelledby="submitConfirmationLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="submitConfirmationLabel"> Submit Confirmation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5> You are about to submit the test.</h5>
+        <p>Once you press Submit Test your resonses will be submitted and you cannot return back to the test.</p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ts-cancel" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-ts-primary" data-dismiss="modal" (click)="onSubmit();">Submit Test</button>
+      </div>
+    </div>
+  </div>
+</div>

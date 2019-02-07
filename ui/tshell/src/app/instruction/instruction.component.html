@@ -1,0 +1,54 @@
+<p *ngFor="let q of questionId">{{q}}</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-4 col-lg-4"></div>
+    <div class="col-sm-12 col-md-4 col-lg-4 ">
+      <h2 class="text-center pt-5">{{skillName | titlecase}} {{assessmentType | titlecase}} Level Test</h2>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-4"></div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <h5>Please read the instructions below before starting the test :</h5>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-sm-12 ">
+      <ol>
+        <li>
+          The duration of test is <b>20 mins</b>.
+        </li>
+        <li>
+          There is no negative marking for this test.
+        </li>
+        <li>
+          The clock will be running as soon as you enter the test. The timer at the right will show
+          the elapsed time.
+        </li>
+        <li>
+          You can navigate between the questions any number of times using the Question pallete to right in Desktop
+          mode. <br>In Mobile mode the question pallete can be opened by using the <b>"Navigate between Questions"</b>
+          button displayed at the top.
+        </li>
+        <li>
+          You can submit the test using the 'Submit Test' button available at the bottom of the question pallete.
+        </li>
+        <li>
+          The test will be automatically submitted and all the reponses will be saved, if the time gets over.
+        </li>
+      </ol>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-3 col-lg-3"></div>
+    <div class="col-12 col-sm-12 col-md-3 col-lg-3"></div>
+    <div class="col-12 col-sm-12 col-md-3 col-lg-3"></div>
+    <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+      <button type="button" class="btn btn-ts-primary btn-block mt-2 mb-2" (click)="startAssesment();">Enter Test
+        &nbsp; &nbsp;<i class="fas fa-chevron-circle-right"></i></button>
+    </div>
+  </div>
+
+</div>

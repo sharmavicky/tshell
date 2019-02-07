@@ -1,0 +1,163 @@
+<!-- Modal -->
+<div>
+    <form [formGroup]="addskillform">
+      <div class="modal-content">
+        <div class="modal-header modal-head-background">
+          <h4>
+            Add Skill
+          </h4>
+          <hr>
+          <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"><i class="fa fa-times"></i></button>
+        </div>
+  
+  
+        <!-- <div [hidden]="success" role="alert">
+          <div [hidden]="fail" role="alert"> -->
+        <div class="modal-body">
+          <div class="container ">
+            <div *ngIf="status==2" class="alert alert-success" role="alert">
+              New Skill Added
+            </div>
+            <div *ngIf="status==1" class="alert alert-danger" role="alert">
+              Skill already exists
+            </div>
+            <div *ngIf="error">
+              <app-error></app-error>
+            </div>
+  
+            <!-- <div *ngIf="status==1" class="alert alert-danger box-msg" role="alert">
+              <h5>Error!(Retry! Or contact Admin)</h5>
+            </div> -->
+  
+            <div class="row">
+              <div class="col-lg-4"> Name </div>
+              <div class="col-lg-5"> </div>
+              <div class="col-lg-1"></div>
+              <div class="col-lg-2"></div>
+            </div>
+  
+            <div class="row">
+              <div class="col-lg-12">
+                <input type="text" class="form-control" formControlName="name" placeholder="Enter Name*" #skillName>
+                <div *ngIf="addskillform.get('name').touched && addskillform.get('name').invalid">
+                  <div *ngIf="addskillform.get('name').errors.required" class="aletry">* Skill Name is required</div>
+  
+                  <div *ngIf="addskillform.get('name').errors.maxlength" class="aletry"> Skill Name must be
+                    maximun 45
+                    characters</div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-lg-4"> Description </div>
+              <div class="col-lg-8"> </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <input type="text" class="form-control" formControlName="description" placeholder="Enter Description*">
+                <div *ngIf="addskillform.get('description').touched && addskillform.get('description').invalid">
+                  <div *ngIf="addskillform.get('description').errors.required" class="aletry">* skill description
+                    Name is required</div>
+                  <div *ngIf="addskillform.get('description').errors.maxlength" class="aletry"> skill Description
+                    must be maximun 400
+                    characters</div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <!--   <div class="row">
+                  <div class="col-lg-4"> Upload a Picture </div>
+                  <div class="col-lg-8"> </div>
+                </div>
+                <div class="row">
+  
+                  <div class="col-lg-12">
+                    <input type="file" fileread="image" accept=".jpg,.png" formControlName="image" #image> </div>
+  
+                </div> -->
+  
+            <div class="row">
+              <div class="col-lg-12"> Add Topics </div>
+            </div>
+            <div class="row ">
+              <div class="col-lg-9 col-12 col-sm-8 col-md-8 ">
+  
+                <div class="form-group">
+                  <input type="text" class="form-control topicinput" formControlName="topicName" #topicname placeholder="Enter topic name">
+                  <div *ngIf="addskillform.get('topicName').touched && addskillform.get('topicName').invalid">
+                    <div *ngIf="addskillform.get('topicName').errors.minlength" class="aletry"> Topic Name must be
+                      of minimum 1
+                      characters</div>
+                    <div *ngIf="addskillform.get('topicName').errors.maxlength" class="aletry"> Topic Name must be
+                      maximun 70 characters
+                    </div>
+                  </div>
+  
+                  <div *ngIf="sametopic" class="aletry" role="alert">
+                    Empty or Duplicate topic name!
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-lg-3 col-12 col-sm-4 col-md-4 lesspadding">
+                <div class="form-group">
+                  <input type="number" class="form-control topicpercentagein" formControlName="topicPercentage"
+                    #topicpercentage placeholder="%">
+  
+                  <div *ngIf="bigper" class="aletry" role="alert">
+                      Should be < 100
+                    </div>
+  
+                  <div *ngIf="emptyper" class="aletry" role="alert">
+                      Required
+                    </div>
+  
+                </div>
+                <button id="erase" (click)="addTopic(topicname.value,topicpercentage.value)" class=" btn btn-ts-primary btn-ts-sm fa fa-plus"
+                  [disabled]="!topicName.valid" ></button>
+              </div>
+            </div>
+           
+            <div class="row">
+              <div class="col-lg-12 col-12">
+                  <small class="text-muted">
+                    * Enter the topic name and weighted percentage for the test.
+                  </small>
+              </div>
+                
+              </div>
+  
+            <div class="row">
+              <div class="col-lg-12">
+                <ul *ngFor="let topic of topics" class="list-inline marginzero inlinetopics">
+                  <li class="badge badge-secondary litopic">{{topic.name}} ({{topic.percentage}}%) &nbsp; <i class="fa fa-times makepointer"
+                      (click)="removeTopic(topic)"></i></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  </div>
+        </div> -->
+        <div class="modal-footer">
+          <!-- <div [hidden]="success" role="alert">
+            <div [hidden]="fail" role="alert"> -->
+          <button class="btn btn-ts-primary makecross" (click)="addSkill();" [disabled]="!addskillform.valid">Save
+            Skill</button>
+          <!--    </div>
+          </div> -->
+          <!--  <div [hidden]="!success"  role="alert">
+              <button class="btn btn-ts-sm btn-ts-primary" (click)="retry(); addSkillModel()">Retry</button>
+          </div>
+          <div [hidden]="!fail" role="alert">
+              <button class="btn btn-ts-sm btn-ts-primary" (click)="retry(); addSkillModel()">Retry</button>
+            </div> -->
+        </div>
+      </div>
+    </form>
+  </div>
+  
+  
+  
+  <!-- activeModal.dismiss('Cross click') -->

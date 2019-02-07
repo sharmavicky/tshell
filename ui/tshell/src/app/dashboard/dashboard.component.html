@@ -1,0 +1,92 @@
+<div class=" container-fluid ">
+        <div class="titlename">Dashboard<hr></div>
+
+        <div class="row">
+                <div class=" col-lg-3 col-md-6 col-12">
+                        <div class="card card-app-summary">
+                                <div class="text-center"> <i class="fa fa-cogs  icon "></i></div>
+                                <div *ngIf="!error">
+                                        <div class=" text-center number">{{skillCount | number}}</div>
+                                </div>
+                                <div *ngIf="error">
+                                        <div class="error-padding-top">
+                                                <app-error></app-error>
+                                        </div>
+                                </div>
+                                <div class="card-text text-center font-weight-bold text">SKILLS</div>
+                        </div>
+                </div>
+
+                <div class=" col-lg-3 col-md-6 col-12">
+                        <div class="card card-app-summary">
+                                <i class="fa fa-pen text-center assessmentIcon" ></i>
+                                <div *ngIf="!error">
+                                        <div class=" text-center number">{{assessmentCount | number}}</div>
+                                </div>
+                                <div *ngIf="error">
+                                        <div class="error-padding-top">
+                                                <app-error></app-error>
+                                        </div>
+                                </div>
+                                <div class="card-text text-center font-weight-bold text">ASSESSMENTS</div>
+                        </div>
+                </div>
+
+                <div class=" col-lg-3 col-md-6 col-12">
+                        <div class="card card-app-summary">
+                                <i class="fa fa-users text-center userIcon"></i>
+                                <div *ngIf="!error">
+                                        <div class=" text-center number">{{userCount | number}}</div>
+                                </div>
+                                <div *ngIf="error">
+                                        <div class="error-padding-top">
+                                                <app-error></app-error>
+                                        </div>
+                                </div>
+                                <div class="card-text text-center font-weight-bold text">USERS</div>
+                        </div>
+                </div>
+
+                <div class=" col-lg-3 col-md-6 col-12">
+                        <div class="card card-app-summary">
+                                <i class="fa fa-question-circle text-center questionIcon" ></i>
+                                <div *ngIf="!error">
+                                        <div class=" text-center number">{{questionCount | numberFormatter}}</div>
+                                </div>
+                                <div *ngIf="error">
+                                        <div class="error-padding-top">
+                                                <app-error></app-error>
+                                        </div>
+                                </div>
+                                <div class="card-text text-center font-weight-bold text">QUESTIONS</div>
+                        </div>
+                </div>
+        </div>
+
+
+
+
+        <!-- ************************************ -->
+        <div class="row">
+                <div class=" col-lg-4 ">
+                        <app-most-searched-skills></app-most-searched-skills>
+                </div>
+                <div class="col-lg-4 ">
+
+                        <app-questiongraph></app-questiongraph>
+
+                </div>
+
+                <div class="col-lg-4 ">
+
+
+                        <app-top-accessed-tests></app-top-accessed-tests>
+
+                </div>
+
+        </div>
+
+
+        <!-- ********************************************** -->
+
+        <app-recently-added-skills></app-recently-added-skills>

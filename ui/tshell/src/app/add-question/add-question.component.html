@@ -1,0 +1,164 @@
+<div class="container-fluid reviewQuestionsContainer">
+  <h1 class="revQuestionHeader">Adding Question for "{{skillName}}"</h1>
+
+
+  <div class="row baseRow">
+    <div class="col-12 col-sm-12 col-lg-6 mt-2 lhsCol">
+      <div class="row">
+        <div class="col-xs-12 col-lg-12">
+
+          <div class="row topicRow">
+            <label for="name">
+              Topics:</label>
+            <select class="dropdown" [(ngModel)]="topic" #topicOfSkill="ngModel" class="form-control col-lg-4 col-sm-4 col-6"
+              required>
+              <option *ngFor="let topic of topicList" value="{{topic[1]}}">{{topic[1]}}</option>
+            </select>
+            <div *ngIf="topicOfSkill.invalid  && (topicOfSkill.dirty || topicOfSkill.touched)" class="alert alert-danger">
+              <div *ngIf="topicOfSkill.errors.required">
+                Topic Sholud be Selected.
+              </div>
+            </div>
+          </div>
+          <div class=" card">
+            <label class="card-header">
+              Question:
+              <a href="#" data-toggle="modal" data-target="#editQuestion">
+                <i class="fas fa-pencil-alt" title="Edit question"></i>
+              </a>
+            </label>
+            <div class="card-body questionCardBody" data-toggle="modal" data-target="#editQuestion">
+              <pre>{{question}}</pre>
+            </div>
+          </div>
+          <div class="modal fade" id="editQuestion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <label>Question:</label>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <textarea class="form-control modalBody" rows="3" [(ngModel)]="question" minlength="10" maxlength="500"
+                    #questionForm="ngModel" required (click)="questionDescriptionValidation()"></textarea>
+                  <div *ngIf="questionForm.invalid && (questionForm.dirty || questionForm.touched)" class="alert alert-danger">
+                    <div *ngIf="questionForm.errors.required">
+                      question is required.
+                    </div>
+                    <div *ngIf="questionForm.errors.minlength">
+                      Question must be at least 10 characters long.
+                    </div>
+                  </div>
+                  <div class="alert alert-danger" *ngIf="question?.length >= 500">
+                    Question must not be at greater than 500 characters long.
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-ts-primary" (click)="saveQuestion()" data-dismiss="modal">Ok</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h5 class="uploadText">Want to upload Questions in bulk? Upload your questions as in the
+          <a href="{{templateUrl}}">template</a> format.
+        </h5>
+        <form [formGroup]="uploadForm" (ngSubmit)="upload()">
+          <h5 *ngIf="fileExtensionError" class="alert alert-danger row align-items-center justify-content-center">{{fileExtensionMessage}}</h5>
+          <div class="form-group upload">
+            <input type="file" formControlName="csvFile" accept=".csv" (change)="onSelectFile($event)">
+            <span> <button type="submit" [disabled]="!uploadForm.valid || fileExtensionError" class="btn btn-ts-primary uploadButton">Upload</button></span>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-12 col-sm-12 col-lg-6 mt-2 rhsCol">
+
+      <label>Add Options:
+        <button (click)="addOption()" class="addOptionButton btn btn-ts-primary" data-toggle="modal" [attr.data-target]="'#mo'+count"
+          [disabled]="count>=5">
+          <i class="fas fa-plus"> </i>
+        </button>
+      </label>
+
+    <div class=" card" >
+      <div *ngFor="let option of optionsList">
+     
+        <div class="row" >
+
+          <div class="col-lg-9 col-sm-6 col-6">
+            <pre>{{option.id}}. {{option.description}}</pre>
+          </div>
+          <div class="col-lg-1 col-sm-2 col-2">
+            <a href="#" data-toggle="modal" [attr.data-target]="'#mo'+option.id">
+              <i class="fas fa-pencil-alt" title="Edit Option"></i>
+            </a>
+          </div>
+          <div class="col-lg-1 col-sm-2 col-2">
+            <i class="far fa-trash-alt" (click)="removeOption(option.id)" title="Remove option"></i>
+          </div>
+          <div class="col-lg-1 col-sm-2 col-2">
+            <input type="checkbox" [name]="'ans'+option.id" class="checkmark" [(ngModel)]="option.answer" (change)="check($event)">
+          </div>
+          <div class="modal fade" [id]="'mo'+option.id" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <label>Option:{{option.id}}</label>
+                  <button type="button" class="close" (click)="optionDescriptionValidation()" data-dismiss="modal"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <textarea class="form-control modalBody" [(ngModel)]="option.description" rows="3" #descriptionOption="ngModel"
+                    minlength="4" maxlength="250" required></textarea>
+                  <div *ngIf="descriptionOption.invalid && (descriptionOption.dirty || descriptionOption.touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="descriptionOption.errors.required">
+                      Option is required.
+                    </div>
+                    <div *ngIf="descriptionOption.errors.minlength">
+                      Option must be atleast 5 characters length.
+                    </div>
+                  </div>
+                  <div class="alert alert-danger" *ngIf="option.description?.length >= 250">
+                    Option must not be greater than 250 characters length.
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-ts-cancel" data-dismiss="modal" (click)="optionDescriptionValidation()">Close</button>
+                  <button type="button" class="btn btn-ts-primary" (click)="saveOption()" data-dismiss="modal">Ok</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div *ngIf="count==5">
+        <span class="maxOptions">*</span>Max 5 Options allowed</div>
+      <div>
+        <div class="row mt-2">
+          <div class="col-12 col-sm-12 col-lg-12">
+            <span class="lhsNoteSpan">
+              <i class="fas fa-info-circle"></i>&nbsp;&nbsp;correct answers are checked</span>
+          </div>
+        </div>
+        <a [routerLink]="['/questions']">
+          <button type="submit" (click)="submit()" class="btn btn-ts-primary submitButton" [disabled]="!(questionForm.valid&& isChecked==true && topicOfSkill.valid && optionTemp==1 && count!=0)">Add
+            Question</button>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>

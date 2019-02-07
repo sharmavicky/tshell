@@ -1,0 +1,64 @@
+
+.textArea{
+    margin-top: 10px;
+}
+
+.head{
+    /* background-color: #dee2e6; */
+    margin-top: 5%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.headerPending{
+    padding-left:6px;
+    font-size:20px; 
+
+}
+.headerCard{
+    background-color: white;
+    border-left:6px solid #0e5bd6;
+}
+.headerTitle{
+    font-size:20px;
+    margin-left: 2%;
+}
+
+.aliginCards{
+    margin-top: 3%;
+}
+
+.datafield{
+    margin-top:3%;
+}
+
+.cardColour{
+    color:#808080;
+}
+
+.buttonColour{
+    background-color: #5A6268;
+}
+
+.formInput{
+    margin-left:2%;
+    margin-right:2%;
+}
+
+.cardsColumns{
+    color:#808080;
+    background-color: white;
+    margin-bottom: 3%;
+    cursor:pointer;
+    padding:3%;
+}
+.cardText1{
+    font-size:20px;
+    text-align: center;
+}
+.cardText2{
+    font-size:38px;
+    text-align: center;
+    font-weight: 600;
+}
+
+

@@ -1,0 +1,204 @@
+a{
+    color:rgb(105, 104, 104);
+}
+.addOptionBtn{
+    font-size: 12px;
+    height: 19px;
+    padding:0px 0px;
+    width:19px;
+}
+.addOptionTextArea{
+    height:200px;
+}
+.approveBtnCmn{
+    text-align: center;
+}
+.baseRow{
+    padding-top: 20px;
+}
+.confirmDeleteOptionMessageSpan{
+    font-weight:450;
+    color:black;
+}
+.confirmDeleteOptionModalBody{
+padding-top:2px;
+}
+.confirmDeleteOptionMessage{
+    padding-top:10px;
+}
+.deleteModalTextArea{
+    background-color:white;
+}
+.existingQuestion{
+    border-bottom:solid;
+    border-color:rgb(177, 176, 176);
+    border-width:1px;
+}
+.headingFindSimilarQ{
+    color:grey;
+}
+.headingApproveOrRejQ{
+    color:grey;
+}
+.highlightSpan{
+    width:100px;
+    height: 100%;
+    border-bottom-left-radius:3px;
+    border-top-left-radius:3px;
+    background-color:rgb(90, 90, 90);
+}
+.horizontalLineInDeleteModal{
+    margin-top:2px;
+}
+/* --------------------------------------------------->
+ .lhsApproveBtn{
+    font-size: 14px;
+    padding:0px 4px;
+    width:100%;   
+} ---------------------------------------------------*/
+
+.lhsApproveRejectBtnSpan{
+    float: right;
+}
+.lhsMessageCol{
+    font-family:cursive;
+    font-size:38px;
+    color:rgb(255, 94, 0);
+}
+.lhsNoteSpan{
+    float: right;
+    color:gray;
+}
+.lhsNoteSpanII{
+    font-size:14px;
+    float:right;
+    color:gray;
+}
+.lhsOptionsHeadingRow{
+    padding-right:16px;
+    padding-left:16px;
+}
+.lhsOptionLabelCol{
+    text-align: center;
+}
+.lhsQueNumberDisplayRow{
+    padding:0px 8px;
+} 
+.lhsQueNumberDisplayCol{
+    background-color:rgb(240, 240, 240);
+    border-radius:4px;
+    padding-left:0px;
+    padding-top:1px;
+    padding-bottom:1px;
+    font-size:18px;
+}
+/*---------------------------------------------> 
+.lhsRejectBtn{
+    font-size: 14px;  
+    padding:0px 4px;
+    width:100%;
+} ---------------------------------------------*/
+
+.lhsSuccesAlert{
+    margin: 13px 15px -3px 13px;
+}
+.lhsTopicBadgeDisplayRow{
+    padding-right:16px;
+    padding-left:16px;
+}
+
+/*-----------------------------------------------> 
+.nxtQuestionBtn{
+    padding:0;
+   width:100%
+} -----------------------------------------------*/
+.nxtQuestionCol{
+    text-align: right;
+}
+.optionList{
+    font-size:13px;
+}
+.preQuestionCol{
+    border-right: solid;
+    border-right-color: lightgrey; 
+    border-width:1px;
+   
+}
+/*.preQuestionBtn{
+    padding:0;
+    width:100%
+}*/
+.questionDef{
+    font-size:12px;
+}
+.questionNumber{
+    margin-left:10px;
+}
+.rejectBtnCmn{
+    text-align: center;
+}
+.revQuestionHeader{
+    text-align: center;
+}
+/* ---- this code is for custom styling of the button specified below ------->
+.rhsApproveBtn{
+    font-size: 13px;
+    padding:2px 4px;  
+} ---------------------------------------------------------------------------*/
+.rhsNoteSpan{
+    float:right;
+    color:gray;
+}
+.rhsOptionsBtn{
+    color:#007bff;
+    box-shadow:none;
+    font-size:13px;
+}
+.rhsOptionsBtn:hover{
+    color:#0056b3;
+    text-decoration: underline;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    box-shadow:none;
+}
+.rhsOptionsBtnSpan{
+    float:right;
+}
+.rhsQId{
+    font-size:13px;
+}
+.rhsQIdLabel{
+    font-size:13px;
+}
+/* --------- this code is for custom styling of the button specified below ------------->
+ .rhsRejectBtn{
+    font-size: 13px;
+    padding:2px 4px;   
+} --------------------------------------------------------------------------------------*/
+.searchSpan{
+    color:rgb(146, 146, 146);
+}
+.searchSpan:hover{
+    cursor: pointer;
+    color:rgb(119, 119, 119);
+}
+.skillBadge{
+    margin-bottom:1px;
+    text-transform: uppercase;
+}
+.ta{
+    background-color:white;
+    border:none;
+}
+.topicBadge{
+    text-transform: capitalize;
+}
+.tsCardInRhsCol{
+    margin:0px 20px 40px 10px;
+}
+.validationAlert{
+ color:red;
+}
+.whitebackground{
+    background-color: white;
+  }

@@ -1,0 +1,112 @@
+{
+  "links": [{
+    "source": 0,
+    "target": 1
+  }, {
+    "source": 2,
+    "target": 3
+  }, {
+    "source": 2,
+    "target": 4
+  }, {
+    "source": 4,
+    "target": 5
+  }, {
+    "source": 6,
+    "target": 7
+  }, {
+    "source": 1,
+    "target": 9
+  }, {
+    "source": 8,
+    "target": 9
+  }, {
+    "source": 9,
+    "target": 10
+  }, {
+    "source": 8,
+    "target": 10
+  }, {
+    "source": 1,
+    "target": 10
+  }, {
+    "source": 13,
+    "target": 12
+  }, {
+    "source": 11,
+    "target": 12
+  }, {
+    "source": 14,
+    "target": 12
+  }, {
+    "source": 15,
+    "target": 12
+  }, {
+    "source": 16,
+    "target": 12
+  }],
+  "nodes": [{
+    "name": "C",
+    "label": "skill"
+  }, {
+    "name": "Java",
+    "label": "skill"
+  }, {
+    "name": "HTML",
+    "label": "skill"
+  }, {
+    "name": "CSS",
+    "label": "skill"
+  }, {
+    "name": "JavaScript",
+    "label": "skill"
+  }, {
+    "name": "TypeSkript",
+    "label": "skill"
+  }, {
+    "name": "MySQL",
+    "label": "skill"
+  }, {
+    "name": "MySQL_Workbench",
+    "label": "skill"
+  }, {
+    "name": "Spring",
+    "label": "skill"
+  }, {
+    "name": "SpringBoot",
+    "label": "skill"
+  }, {
+    "name": "SpringMVC",
+    "label": "skill"
+  }, {
+    "name": "Microsoft Office Paint",
+    "label": "skill"
+  }, {
+    "name": "Microsoft Office",
+    "label": "skill"
+  }, {
+    "name": "Microsoft Office Powerpoint",
+    "label": "skill"
+  }, {
+    "name": "Microsoft Office Word",
+    "label": "skill"
+  }, {
+    "name": "Microsoft Office Excel",
+    "label": "skill"
+  }, {
+    "name": "Microsoft Office Access",
+    "label": "skill"
+  }, {
+    "name": "Microsoft Office Powerpoint",
+    "label": "skill"
+  }, {
+    "name": "Microsoft Office Word",
+    "label": "skill"
+  }, {
+    "name": "Microsoft Office Excel",
+    "label": "skill"
+  }, {
+    "name": "Microsoft Office Access",
+    "label": "skill"
+  }]
+}

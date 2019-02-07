@@ -1,0 +1,27 @@
+
+
+
+.card{
+    box-shadow: 2px 2px 18px 6px rgba(0, 0, 0, 0.20);
+   
+}
+.card-chart{
+    padding:10px;
+    height: 100%;
+    margin:10px;
+}
+.no-data {
+    
+    padding-top:50px;
+    padding-bottom: 30px;
+  
+    text-align:center;
+    color: #464545;
+    font-size: 18px;
+    font-style: italic;
+
+}
+.error-padding-top {
+    padding-top:24px;
+}
+

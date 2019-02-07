@@ -1,0 +1,65 @@
+<div  *ngIf="!error" class="container">
+  <div class="row pt-3 pb-3">
+    <div class="col-0 col-lg-3 col-md-3 col-sm-1"></div>
+    <div class="card col-12 col-lg-6 col-md-6 col-sm-10">
+      <div class="card card-header card-header-success text-center">
+        <h4 class="text-capitalize"> {{skillName | uppercase }} : Topic Wise Score Details</h4>
+      </div>
+      <div class="card-body">
+        <div class="barWrapper" *ngFor="let topic of topicWiseScore">
+          <span class="progressText">
+            <B>{{topic.topicName}} ({{topic.score}}/{{topic.outof}})</B>
+          </span>
+          <div class="progress">
+            <div class="progress-bar {{topic.class}} " role="progressbar" aria-valuenow="topic.percentage"
+              aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width': topic.percentage+'%'}">
+              {{topic.percentage}}%
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="card-footer">
+        <div class="barWrapper">
+          <p class="progressText text-center">
+            <B>Total Score : {{total}} Out of {{totalOutOf}} </B>
+          </p>
+          <div class="progress mt-2">
+            <div class="progress-bar {{overallClass}}" role="progressbar" aria-valuenow="overallpecent" aria-valuemin="0"
+              aria-valuemax="100" [ngStyle]="{'width': overallpecent+'%'}">
+              {{overallpecent}}%
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="row">
+        <div class="legends pl-3"><small>
+         Percentage : &nbsp; &nbsp;
+            <span class="unanswered-legend-buttons bg-danger"> </span> 0-29 &nbsp; &nbsp;
+            <span class="unanswered-legend-buttons bg-warning"> </span> 30 - 49 &nbsp; &nbsp;
+            <span class="unanswered-legend-buttons bg-info"> </span> 50 - 69 &nbsp; &nbsp;
+            <span class="unanswered-legend-buttons bg-success"> </span> 70and above
+          </small>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-3 col-lg-4"></div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4">
+          <button type="button" class="btn btn-ts-primary btn-block mt-3 mb-2" (click)="homePage();">
+            Close Window
+          </button>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4"></div>
+      </div>
+    </div>
+    <div class="col-0 col-lg-3 col-md-3 col-sm-1"></div>
+  </div>
+</div>
+
+
+<div *ngIf="error" class="pt-5">
+  <div>
+    <app-error></app-error>
+  </div>
+</div>

@@ -1,0 +1,117 @@
+.addSkillContainer {
+  background-color: white;
+  border: 1px solid rgb(190, 202, 209);
+  border-radius: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  box-shadow: 17px 17px 19px grey;
+  display: flex;
+}
+
+.searchbox {
+  padding-right: 0px;
+}
+
+.searchbutton {
+  padding-left: 0px;
+}
+
+.entry:not(:first-of-type) {
+  margin-top: 10px;
+}
+
+.fa {
+  font-size: 12px;
+}
+
+.fa-addskilll {
+  font-size: 16px;
+}
+
+
+.newlist {
+  list-style: none;
+}
+
+
+
+.itwillflex {
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+
+#erase {
+  position: absolute;
+  right: 20px;
+  top: 7px;
+  border: none;
+  height: 25px;
+  width: 40px;
+  outline: none;
+  text-align: center;
+  font-weight: bold;
+  padding: 7px;
+
+}
+
+#erase:hover {
+  cursor: pointer;
+}
+
+#erase1 {
+  position: absolute;
+  right: 30px;
+  top: 26px;
+  border: none;
+  height: 25px;
+  width: 40px;
+  outline: none;
+  text-align: center;
+  font-weight: bold;
+  padding: 0px;
+
+}
+
+#erase1:hover {
+  cursor: pointer;
+}
+
+.buttonInside {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.makepointer {
+  cursor: pointer;
+}
+
+.makecross {
+  cursor: not-allowed;
+}
+
+.litopic {
+
+  cursor: default;
+  position: relative;
+  display: inline-block;
+  margin: 4px 4px 0 0;
+  padding: 7px;
+  font-size: 14px;
+}
+
+.marginzero {
+  margin-bottom: 2px;
+}
+
+.aletry {
+  color: red;
+  font-size: 12px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.lesspadding{
+  padding-left: 0px!important;
+}

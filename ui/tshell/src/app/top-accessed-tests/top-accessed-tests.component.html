@@ -1,0 +1,25 @@
+<div class="card card-chart"  > 
+  <div class="h3  d-flex justify-content-center " >Top5 Accessed Tests</div>
+  <div *ngIf="!error">
+      <div *ngIf="chartLabels!=0" class="full">
+          <canvas
+                  baseChart
+                  [chartType]="'horizontalBar'"
+                  [datasets]="chartData"
+                  [labels]="chartLabels" 
+                  [legend]="true"
+                  [colors]="BarColors">
+      
+          </canvas>
+      </div>
+      <div *ngIf="chartLabels==0" class="no-data">
+          No data available yet.
+      </div>
+  </div>
+
+  <div *ngIf="error">
+      <div class="error-padding-top">
+     <!-- <app-error></app-error> -->
+      </div>
+  </div> 
+</div>

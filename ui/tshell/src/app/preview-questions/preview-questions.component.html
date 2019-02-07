@@ -1,0 +1,52 @@
+<div class="container">
+  <div *ngIf="csvData==null">
+    <div>
+      <h1>No Data Found!</h1>
+    </div>
+    <div class="actions">
+      <button type="submit" class="btn btn-ts-primary btn-ts-sm" (click)="retry()">Retry</button>
+    </div>
+  </div>
+  <div *ngIf="csvData!=null">
+    <div class="card" *ngFor="let data of csvData ,let i=index">
+      <div class="card-header" data-toggle="collapse" [attr.data-target]="'#content'+i+1  ">
+        <div *ngIf="csvData[i].error">
+          <pre>{{i+1}}. {{csvData[i].question}}<i class="fa fa-exclamation-triangle text-center icon text-danger "></i> <span *ngIf="data.validTopic" class=" badge badge-primary topic"> {{data.topic}}</span><span *ngIf="!data.validTopic" class=" badge badge-danger topic" >{{data.topic}}</span></pre>
+        </div>
+        <div *ngIf="!csvData[i].error">
+          <pre>{{i+1}}. {{csvData[i].question}}<span *ngIf="data.validTopic" class=" badge badge-primary topic"> {{data.topic}}</span><span *ngIf="!data.validTopic" class=" badge badge-danger topic" >{{data.topic}}</span></pre>
+        </div>
+        <span *ngIf="csvData[i].lengthExceeded" class=" lengtherrorbadge badge badge-danger"> {{csvData[i].error}}</span>
+      </div>
+      <div [id]="'content'+i+1" class="collapse">
+        <div class="card-body">
+          <div *ngFor="let option of csvData[i].optionList, let j=index">
+            <span class="wrongOption" *ngIf="!option.answer ">
+              <span>
+                <pre>{{j+1}}.{{option.description}} </pre> </span>
+            </span>
+            <span class="correctOption" *ngIf="option.answer">
+              <span>
+                <pre>{{j+1}}.{{option.description}} <i class="fa fa-check-circle text-center icon text-success " ></i> </pre>
+              </span>
+            </span>
+            <span *ngIf="option.lengthExceeded" class="badge badge-danger">{{csvData[i].error}}</span> </div>
+          <span class="errorbadge badge badge-danger">{{csvData[i].error}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 text-center action">
+      <span class="actions">
+        <button type="submit" class="btn btn-ts-primary btn-ts-sm" *ngIf="errorCount==0" (click)="approveSubmittted() ">Approve
+          and Submit</button>
+      </span>
+      <span class="actions">
+        <button type="submit" class="btn btn-ts-primary btn-ts-sm" *ngIf="errorCount==0" (click)="submitForReview()">Submit
+          for Review</button>
+      </span>
+      <span class="actions">
+        <button type="submit" class="btn btn-ts-primary btn-ts-sm" (click)="retry()">Retry</button>
+      </span>
+    </div>
+  </div>
+</div>
